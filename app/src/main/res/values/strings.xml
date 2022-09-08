@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FridgeMate</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="api_key">6ebc7762436648ae8a593e49a1be14e8</string>
+</resources>
