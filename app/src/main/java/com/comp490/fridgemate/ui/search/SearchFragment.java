@@ -1,6 +1,7 @@
-package com.comp490.fridgemate.ui.home;
+package com.comp490.fridgemate.ui.search;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -20,23 +21,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.comp490.fridgemate.Adapters.RandomRecipeAdapter;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeClickListener;
-import com.comp490.fridgemate.MainActivity;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.R;
+import com.comp490.fridgemate.RecipeDetailsActivity;
 import com.comp490.fridgemate.RequestManager;
 import com.comp490.fridgemate.databinding.FragmentHomeBinding;
+import com.comp490.fridgemate.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class SearchFragment extends Fragment {
     ProgressDialog dialog;
     RequestManager manager;
     RandomRecipeAdapter randomRecipeAdapter;
     RecyclerView recyclerView;
-    private FragmentHomeBinding binding;
+    private FragmentSearchBinding binding;
     Spinner spinner;
     List<String> tags = new ArrayList<>();
+    SearchView searchView;
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
@@ -58,10 +61,10 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        SearchViewModel searchViewModel =
+                new ViewModelProvider(this).get(SearchViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentSearchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 //        final TextView textView = binding.textHome;
@@ -69,7 +72,22 @@ public class HomeFragment extends Fragment {
 
       dialog = new ProgressDialog((getActivity()));
         dialog.setTitle("Loading...");
+        searchView = root.findViewById(R.id.searchView_home);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipes(randomRecipeResponseListener, tags);
+                dialog.show();
+                return true;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
         spinner = root.findViewById(R.id.spinner_tags);
         ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
                 root.getContext(),
@@ -79,7 +97,7 @@ public class HomeFragment extends Fragment {
         arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(spinnerSelectedListener);
-        manager = new RequestManager((getActivity()));
+        manager = new RequestManager((root.getContext()));
 //        manager.getRandomRecipes(randomRecipeResponseListener,tags);
 //        dialog.show();
 
@@ -109,7 +127,8 @@ public class HomeFragment extends Fragment {
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
-            Toast.makeText(getActivity(), id, Toast.LENGTH_SHORT);
+            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
+                    .putExtra("id", id));
         }
     };
 }
