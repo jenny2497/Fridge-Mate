@@ -27,7 +27,7 @@ import java.util.List;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
-    TextView textView_meal_name, textView_meal_source, textView_meal_summary;
+    TextView textView_meal_name, textView_meal_source, textView_meal_summary, textView_meal_servings;
     ImageView imageView_meal_image;
     RecyclerView recycler_meal_ingredients, recycler_meal_similar, recycler_meal_instructions;
     RequestManager manager;
@@ -59,7 +59,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         recycler_meal_ingredients=findViewById(R.id.recycler_meal_ingredients);
         recycler_meal_similar = findViewById(R.id.recycler_meal_similar);
         recycler_meal_instructions = findViewById(R.id.recycler_meal_instructions);
-
+        textView_meal_servings = findViewById(R.id.textView_meal_servings);
     }
     private final RecipeDetailsListener recipeDetailsListener = new RecipeDetailsListener() {
         @Override
@@ -68,6 +68,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             textView_meal_name.setText(response.title);
             textView_meal_source.setText(response.sourceName);
             textView_meal_summary.setText(response.summary);
+            textView_meal_servings.setText(String.valueOf(response.servings));
             Picasso.get().load(response.image).into(imageView_meal_image);
             recycler_meal_ingredients.setHasFixedSize(true);
             recycler_meal_ingredients.setLayoutManager(new LinearLayoutManager(RecipeDetailsActivity.this, LinearLayoutManager.HORIZONTAL, false));

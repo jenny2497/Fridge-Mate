@@ -1,4 +1,4 @@
-package com.comp490.fridgemate.ui.dashboard;
+package com.comp490.fridgemate.ui.fridge;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.comp490.fridgemate.databinding.FragmentDashboardBinding;
+import com.comp490.fridgemate.databinding.FragmentFridgeBinding;
 
-public class DashboardFragment extends Fragment {
+public class FridgeFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentFridgeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        FridgeViewModel dashboardViewModel =
+                new ViewModelProvider(this).get(FridgeViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentFridgeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
+        final TextView textView = binding.textFridge;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
