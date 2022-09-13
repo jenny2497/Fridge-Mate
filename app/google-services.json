@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "299560352945",
+    "project_id": "fridgemate-743a5",
+    "storage_bucket": "fridgemate-743a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299560352945:android:31b4cf50abbcde50ed3690",
+        "android_client_info": {
+          "package_name": "com.comp490.fridgemate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299560352945-tals2rjsdgnuj0tp2jed8g93aa14km33.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.comp490.fridgemate",
+            "certificate_hash": "194ac206a79aba110fb400d6119aa5af99bdec9b"
+          }
+        },
+        {
+          "client_id": "299560352945-9diknabvmumhcf2lt4aplh3igi8geeq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMuB4EEwEyMe3ya_TAQvSKQGyjKF__5xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299560352945-9diknabvmumhcf2lt4aplh3igi8geeq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
