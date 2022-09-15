@@ -1,3 +1,4 @@
+//Sample comment
 package com.comp490.fridgemate;
 
 import androidx.appcompat.app.AppCompatActivity;
