@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3676148796498906" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.109375" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.23754170735677088" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/layout/fridge_ingredient_item.xml" value="0.23754789272030652" />
         <entry key="app/src/main/res/layout/list_instructions.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_instructions_step_items.xml" value="0.1" />
