@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -93,7 +95,7 @@ public class FridgeFragment extends Fragment {
 
         @Override
         public void didError(String message) {
-            Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT);
+            Toast.makeText(root.getContext(), message, Toast.LENGTH_SHORT);
         }
     };
 
@@ -141,6 +143,8 @@ public class FridgeFragment extends Fragment {
 
         fetchFromDatabase();
 
+
+
         return root;
     }
 
@@ -155,7 +159,25 @@ public class FridgeFragment extends Fragment {
                     if (document.exists()) {
                         fridgeItems = (ArrayList<String>) document.getData().get("fridge");
                         Log.d("TAG", "DocumentSnapshot data: " + fridgeItems);
-                        fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems);
+                        fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems) {
+                            @Override
+                            public View getView(final int position, View convertView, ViewGroup parent) {
+                                View inflatedView = super.getView(position, convertView, parent);
+                                Button deleteIngredientButton = inflatedView.findViewById(R.id.delete_ingredient);
+                                deleteIngredientButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Log.d("TAG", "item clicked " + fridgeItems.get(position));
+                                        fridgeDocRef.update("fridge", FieldValue.arrayRemove(fridgeItems.get(position)));
+                                        fridgeItems.remove(position);
+                                        fridgeIngredientsAdapter.notifyDataSetChanged();
+
+                                    }
+                                });
+                                return inflatedView;
+                            };
+                        };
+
                         fridgeIngredients.setAdapter(fridgeIngredientsAdapter);
                         needToCreateFridge = false;
                     } else {
