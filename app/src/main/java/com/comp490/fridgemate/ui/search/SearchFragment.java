@@ -25,7 +25,6 @@ import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RecipeDetailsActivity;
 import com.comp490.fridgemate.RequestManager;
-import com.comp490.fridgemate.databinding.FragmentHomeBinding;
 import com.comp490.fridgemate.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;

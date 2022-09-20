@@ -2,10 +2,12 @@ package com.comp490.fridgemate;
 
 import android.content.Context;
 
+import com.comp490.fridgemate.Listeners.AutocompleteIngredientsListener;
 import com.comp490.fridgemate.Listeners.InstructionsListener;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeDetailsListener;
 import com.comp490.fridgemate.Listeners.SimilarRecipesListener;
+import com.comp490.fridgemate.Models.AutocompleteIngredientsResponse;
 import com.comp490.fridgemate.Models.InstructionsResponse;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
@@ -115,6 +117,27 @@ public class RequestManager {
             }
         });
     }
+
+    public void getAutoCompleteIngredients(AutocompleteIngredientsListener listener, String query) {
+        CallAutocompleteIngredients callAutocompleteIngredients = retrofit.create(CallAutocompleteIngredients.class);
+        Call<List<AutocompleteIngredientsResponse>> call = callAutocompleteIngredients.callAutocompleteIngredients(query, "10", context.getString(R.string.api_key));
+        call.enqueue(new Callback<List<AutocompleteIngredientsResponse>>() {
+            @Override
+            public void onResponse(Call<List<AutocompleteIngredientsResponse>> call, Response<List<AutocompleteIngredientsResponse>> response) {
+                if (!response.isSuccessful()) {
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<AutocompleteIngredientsResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+
+            }
+        });
+    }
     private interface CallRandomRecipes {
         @GET("recipes/random")
         Call<RandomRecipeApiResponse> callRandomRecipe(
@@ -145,6 +168,15 @@ public class RequestManager {
         Call<List<InstructionsResponse>> callInstructions(
           @Path("id") int id,
           @Query("apiKey") String apiKey
+        );
+    }
+
+    private interface CallAutocompleteIngredients {
+        @GET("food/ingredients/autocomplete")
+        Call<List<AutocompleteIngredientsResponse>> callAutocompleteIngredients(
+                @Query("query") String query,
+                @Query("number") String number,
+                @Query("apiKey") String apiKey
         );
     }
 }
