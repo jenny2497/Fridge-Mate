@@ -1,4 +1,4 @@
-package com.comp490.fridgemate.Adapters;
+ipackage com.comp490.fridgemate.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -33,18 +33,30 @@ public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFro
     @NonNull
     @Override
     public RecipeFromIngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new RecipeFromIngredientsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_random_recipe, parent, false));
+<<<<<<< HEAD
+
+=======
+        return new RecipeFromIngredientsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_recipe_from_ingredients, parent, false));
+>>>>>>> kristina
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecipeFromIngredientsViewHolder holder, int position) {
         holder.textView_title.setText(list.get(position).title);
         holder.textView_title.setSelected(true);
+<<<<<<< HEAD
+=======
+        holder.textView_missingIngredients.setText(String.valueOf(list.get(position).missedIngredientCount));
+>>>>>>> kristina
 //        holder.textView_servings.setText(list.get(position).servings+ " Servings");
 //        holder.textView_time.setText(list.get(position).readyInMinutes + " Minutes");
         Picasso.get().load(list.get(position).image).into(holder.imageView_food);
 
+<<<<<<< HEAD
         holder.random_list_container.setOnClickListener(new View.OnClickListener() {
+=======
+        holder.recipe_from_ingredients_container.setOnClickListener(new View.OnClickListener() {
+>>>>>>> kristina
             @Override
             public void onClick(View view) {
                 listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
@@ -57,17 +69,25 @@ public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFro
         return list.size();
     }
 }
+<<<<<<< HEAD
+=======
+
 class RecipeFromIngredientsViewHolder extends RecyclerView.ViewHolder {
-    CardView random_list_container;
-    TextView textView_title, textView_servings, textView_time;
+    CardView recipe_from_ingredients_container;
+    TextView textView_title, textView_missingIngredients;
+>>>>>>> kristina
     ImageView imageView_food;
 
     public RecipeFromIngredientsViewHolder(@NonNull View itemView) {
         super(itemView);
+<<<<<<< HEAD
         random_list_container = itemView.findViewById(R.id.random_list_container);
         textView_title = itemView.findViewById(R.id.textView_title);
-        textView_servings = itemView.findViewById(R.id.textView_servings);
-        textView_time = itemView.findViewById(R.id.textView_time);
+=======
+        recipe_from_ingredients_container = itemView.findViewById(R.id.recipe_from_ingredients_container);
+        textView_title = itemView.findViewById(R.id.textView_title);
+        textView_missingIngredients = itemView.findViewById(R.id.textView_missingIngredients);
+>>>>>>> kristina
         imageView_food = itemView.findViewById(R.id.imageView_food);
 
 
