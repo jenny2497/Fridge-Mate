@@ -56,7 +56,9 @@ public class LoginActivity extends AppCompatActivity {
         // Create and launch sign-in intent
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
-                .setLogo(R.mipmap.ic_launcher_foreground).setAvailableProviders(providers)
+                .setAvailableProviders(providers)
+                .setLogo(R.drawable.transparent_fridgemate_logo)
+                .setTheme(R.style.LogInTheme)
                 .build();
         signInLauncher.launch(signInIntent);
         // [END auth_fui_create_intent]
