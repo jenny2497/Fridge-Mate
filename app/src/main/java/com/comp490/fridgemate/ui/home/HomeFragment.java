@@ -70,6 +70,7 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void didError(String message) {
+            dialog.dismiss();
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT);
             Log.d("Tag1", message);
         }
@@ -88,7 +89,9 @@ public class HomeFragment extends Fragment {
 
       dialog = new ProgressDialog((getActivity()));
         dialog.setTitle("Loading...");
-//        spinner = root.findViewById(R.id.spinner_tags);
+        dialog.show();
+        spinner = root.findViewById(R.id.spinner_tags);
+        spinner.setVisibility(View.INVISIBLE);
 //        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
 //                root.getContext(),
 //                R.array.tags,
@@ -119,12 +122,15 @@ public class HomeFragment extends Fragment {
                         manager.getRecipeFromIngredients(recipeFromIngredientsListener, ingredientsInFridge);
 
                         Log.d("TAG", "DocumentSnapshot data: " + ingredientsInFridge);
-
                     } else {
                         Log.d("TAG", "No such document");
+                        dialog.dismiss();
+                        Toast.makeText(getContext(), "need to add ingredients to fridge", Toast.LENGTH_SHORT);
                     }
                 } else {
                     Log.d("TAG", "get failed with ", task.getException());
+                    Toast.makeText(getContext(), "couldn't retrieve fridge ingredients list", Toast.LENGTH_SHORT);
+
                 }
             }
         });
