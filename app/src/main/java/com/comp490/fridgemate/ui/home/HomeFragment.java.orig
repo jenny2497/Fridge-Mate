@@ -20,14 +20,20 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
+import com.comp490.fridgemate.Adapters.RandomRecipeAdapter;
 import com.comp490.fridgemate.Adapters.RecipeFromIngredientsAdapter;
+<<<<<<< HEAD
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
+=======
+>>>>>>> kristina
 import com.comp490.fridgemate.Listeners.RecipeClickListener;
 import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.MainActivity;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
+<<<<<<< HEAD
 import com.comp490.fridgemate.Models.Recipe;
+=======
+>>>>>>> kristina
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RecipeDetailsActivity;
@@ -45,8 +51,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.http.HEAD;
-
 public class HomeFragment extends Fragment {
     ProgressDialog dialog;
     RequestManager manager;
@@ -54,10 +58,12 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     private FragmentHomeBinding binding;
     Spinner spinner;
+<<<<<<< HEAD
 
     private final RecipeFromIngredientsListener recipeFromIngredientsListener = new RecipeFromIngredientsListener() {
 
 
+=======
     List<String> ingredientsInFridge = new ArrayList<>();
     FirebaseUser currentFirebaseUser;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -65,6 +71,7 @@ public class HomeFragment extends Fragment {
 
 
     private final RecipeFromIngredientsListener recipeFromIngredientsListener = new RecipeFromIngredientsListener() {
+>>>>>>> kristina
         @Override
         public void didFetch(List<RecipeFromIngredientsResponse> response, String message) {
             dialog.dismiss();
@@ -100,8 +107,10 @@ public class HomeFragment extends Fragment {
         dialog.show();
         spinner = root.findViewById(R.id.spinner_tags);
         spinner.setVisibility(View.INVISIBLE);
+<<<<<<< HEAD
         manager = new RequestManager((getActivity()));
 //        manager.getRandomRecipes(randomRecipeResponseListener,tags);
+=======
 //        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
 //                root.getContext(),
 //                R.array.tags,
@@ -115,6 +124,7 @@ public class HomeFragment extends Fragment {
         String user = currentFirebaseUser.getUid();
         fridgeDocRef = db.collection("users/" + user + "/categories").document("fridge");
         fetchFromDatabase();
+>>>>>>> kristina
 //        dialog.show();
 
         return root;
@@ -153,6 +163,9 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+<<<<<<< HEAD
+
+=======
 //    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
 //        @Override
 //        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -167,6 +180,7 @@ public class HomeFragment extends Fragment {
 //
 //        }
 //    };
+>>>>>>> kristina
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
