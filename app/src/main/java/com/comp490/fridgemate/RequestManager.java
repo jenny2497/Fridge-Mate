@@ -6,11 +6,13 @@ import com.comp490.fridgemate.Listeners.AutocompleteIngredientsListener;
 import com.comp490.fridgemate.Listeners.InstructionsListener;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeDetailsListener;
+import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.Listeners.SimilarRecipesListener;
 import com.comp490.fridgemate.Models.AutocompleteIngredientsResponse;
 import com.comp490.fridgemate.Models.InstructionsResponse;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
+import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.Models.SimilarRecipeResponse;
 
 import java.io.IOError;
@@ -138,6 +140,34 @@ public class RequestManager {
             }
         });
     }
+
+    public void getRecipeFromIngredients(RecipeFromIngredientsListener listener, List<String> query) {
+        CallRecipeFromIngredients callRecipeFromIngredients = retrofit.create(CallRecipeFromIngredients.class);
+        String ingredientsList = "";
+        for (int i = 0; i <query.size(); i++) {
+            ingredientsList += query.get(i);
+            if (i != query.size() - 1) {
+                ingredientsList += ",";
+            }
+        }
+        Call<List<RecipeFromIngredientsResponse>> call = callRecipeFromIngredients.callRecipeFromIngredients(context.getString(R.string.api_key), ingredientsList,"true","2");
+        call.enqueue(new Callback<List<RecipeFromIngredientsResponse>>() {
+            @Override
+            public void onResponse(Call<List<RecipeFromIngredientsResponse>> call, Response<List<RecipeFromIngredientsResponse>> response) {
+                if (!response.isSuccessful()) {
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<RecipeFromIngredientsResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+
+            }
+        });
+    }
     private interface CallRandomRecipes {
         @GET("recipes/random")
         Call<RandomRecipeApiResponse> callRandomRecipe(
@@ -178,5 +208,17 @@ public class RequestManager {
                 @Query("number") String number,
                 @Query("apiKey") String apiKey
         );
+    }
+
+    private interface CallRecipeFromIngredients {
+        @GET("recipes/findByIngredients")
+        Call<List<RecipeFromIngredientsResponse>> callRecipeFromIngredients(
+                @Query("apiKey") String apiKey,
+                @Query("ingredients") String ingredients,
+                @Query("ranking") String ranking,
+                @Query("ignorePantry") String ignorePantry
+
+
+                );
     }
 }

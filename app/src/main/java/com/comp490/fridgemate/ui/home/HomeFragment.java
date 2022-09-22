@@ -1,6 +1,7 @@
 package com.comp490.fridgemate.ui.home;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +19,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.comp490.fridgemate.Adapters.RandomRecipeAdapter;
+import com.comp490.fridgemate.Adapters.RecipeFromIngredientsAdapter;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeClickListener;
+import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.MainActivity;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
+import com.comp490.fridgemate.Models.Recipe;
+import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.R;
+import com.comp490.fridgemate.RecipeDetailsActivity;
 import com.comp490.fridgemate.RequestManager;
 import com.comp490.fridgemate.databinding.FragmentHomeBinding;
 
@@ -32,22 +38,23 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     ProgressDialog dialog;
     RequestManager manager;
-    RandomRecipeAdapter randomRecipeAdapter;
+    RecipeFromIngredientsAdapter recipeFromIngredientsAdapter;
     RecyclerView recyclerView;
     private FragmentHomeBinding binding;
     Spinner spinner;
-    List<String> tags = new ArrayList<>();
 
-    private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
+    private final RecipeFromIngredientsListener recipeFromIngredientsListener = new RecipeFromIngredientsListener() {
+
+
         @Override
-        public void didFetch(RandomRecipeApiResponse response, String message) {
+        public void didFetch(List<RecipeFromIngredientsResponse> response, String message) {
             dialog.dismiss();
 
             recyclerView = getActivity().findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener);
-            recyclerView.setAdapter(randomRecipeAdapter);
+            recipeFromIngredientsAdapter = new RecipeFromIngredientsAdapter(getActivity(), response, recipeClickListener);
+            recyclerView.setAdapter(recipeFromIngredientsAdapter);
         }
 
         @Override
@@ -71,14 +78,7 @@ public class HomeFragment extends Fragment {
         dialog.setTitle("Loading...");
 
         spinner = root.findViewById(R.id.spinner_tags);
-        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
-                root.getContext(),
-                R.array.tags,
-                R.layout.spinner_text
-        );
-        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
-        spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(spinnerSelectedListener);
+        spinner.setVisibility(View.INVISIBLE);
         manager = new RequestManager((getActivity()));
 //        manager.getRandomRecipes(randomRecipeResponseListener,tags);
 //        dialog.show();
@@ -91,25 +91,13 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            tags.clear();
-            tags.add(adapterView.getSelectedItem().toString());
-        manager.getRandomRecipes(randomRecipeResponseListener, tags);
-        dialog.show();
-        }
 
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
-
-        }
-    };
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
-            Toast.makeText(getActivity(), id, Toast.LENGTH_SHORT);
+            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
+                    .putExtra("id", id));
         }
     };
 }
