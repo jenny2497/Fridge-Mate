@@ -150,7 +150,7 @@ public class RequestManager {
                 ingredientsList += ",";
             }
         }
-        Call<List<RecipeFromIngredientsResponse>> call = callRecipeFromIngredients.callRecipeFromIngredients(context.getString(R.string.api_key), ingredientsList,"true","2");
+        Call<List<RecipeFromIngredientsResponse>> call = callRecipeFromIngredients.callRecipeFromIngredients(context.getString(R.string.api_key), ingredientsList,"2","true");
         call.enqueue(new Callback<List<RecipeFromIngredientsResponse>>() {
             @Override
             public void onResponse(Call<List<RecipeFromIngredientsResponse>> call, Response<List<RecipeFromIngredientsResponse>> response) {
