@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 new AuthUI.IdpConfig.PhoneBuilder().build());
 
 
-        // Create and launch sign-in intent
+        // Create and launch sign-in intent2
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
