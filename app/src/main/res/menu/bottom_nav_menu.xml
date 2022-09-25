@@ -9,6 +9,7 @@
         android:title="@string/title_fridge" />
 
     <item
+<<<<<<< HEAD
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
@@ -24,4 +25,19 @@
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/title_settings" />
+=======
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search" />
+    <item
+        android:id ="@+id/navigation_bookmark"
+        android:icon="@drawable/ic_baseline_bookmark_24"
+        android:title="Bookmark"
+        />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/title_settings" />
+
+>>>>>>> bf839da197bc038ce69a6e215a47e420bdd94991
 </menu>
