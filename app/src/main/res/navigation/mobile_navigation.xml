@@ -6,16 +6,18 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
+        android:id="@+id/navigation_fridge"
+        android:name="com.comp490.fridgemate.ui.fridge.FridgeFragment"
+        android:label="@string/title_fridge"
+        tools:layout="@layout/fragment_fridge" />
+
+    <fragment
         android:id="@+id/navigation_home"
         android:name="com.comp490.fridgemate.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/navigation_fridge"
-        android:name="com.comp490.fridgemate.ui.fridge.FridgeFragment"
-        android:label="@string/title_fridge"
-        tools:layout="@layout/fragment_fridge" />
+
 
     <fragment
         android:id="@+id/navigation_settings"

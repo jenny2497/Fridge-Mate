@@ -102,8 +102,6 @@ public class FridgeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        FridgeViewModel fridgeViewModel =
-                new ViewModelProvider(this).get(FridgeViewModel.class);
 
         binding = FragmentFridgeBinding.inflate(inflater, container, false);
         root = binding.getRoot();
@@ -188,6 +186,9 @@ public class FridgeFragment extends Fragment {
                     }
                 } else {
                     Log.d("TAG", "get failed with ", task.getException());
+                    fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems);
+                    fridgeIngredients.setAdapter(fridgeIngredientsAdapter);
+                    needToCreateFridge = true;
                 }
             }
         });
