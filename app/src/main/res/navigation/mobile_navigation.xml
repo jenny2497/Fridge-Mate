@@ -34,8 +34,7 @@
         android:id="@+id/navigation_bookmark"
         android:name="com.comp490.fridgemate.ui.bookMark.BookMarkFragment"
         android:label="Bookmark"
-        tools:layout="@layout/fragment_bookmark"
-        />
+        tools:layout="@layout/fragment_bookmark" />
 
 
 </navigation>

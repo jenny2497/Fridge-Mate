@@ -89,6 +89,7 @@ public class FridgeFragment extends Fragment {
                         fridgeDocRef.update("fridge", FieldValue.arrayUnion(selection));
                     }
                     Log.d("test", selection);
+                    addFridgeItem.setText("");
                 }
             });
         }
