@@ -39,4 +39,5 @@ public class Recipe {
     public ArrayList<AnalyzedInstruction> analyzedInstructions;
     public Object originalId;
     public String spoonacularSourceUrl;
+    public boolean fromSpoonacular;
 }
