@@ -19,9 +19,12 @@
         <entry key="app/src/main/res/drawable/ic_time.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17826690673828127" />
-        <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.2807037353515625" />
+        <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.1836734693877551" />
+        <entry key="app/src/main/res/layout/create_instruction.xml" value="0.11822916666666666" />
+        <entry key="app/src/main/res/layout/create_item.xml" value="0.1171875" />
+        <entry key="app/src/main/res/layout/create_recipe.xml" value="0.21" />
         <entry key="app/src/main/res/layout/folder_item.xml" value="0.2913029988606771" />
-        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.109375" />
+        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_fridge.xml" value="0.18189239501953125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3676148796498906" />
@@ -33,7 +36,7 @@
         <entry key="app/src/main/res/layout/list_instructions_step_items.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_instructions_steps.xml" value="0.10833333333333334" />
         <entry key="app/src/main/res/layout/list_meal_ingredients.xml" value="0.10422973632812493" />
-        <entry key="app/src/main/res/layout/list_random_recipe.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_random_recipe.xml" value="0.2600753784179688" />
         <entry key="app/src/main/res/layout/list_recipe_from_ingredients.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_similar_recipe.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/login_activity.xml" value="0.10625" />

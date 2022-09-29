@@ -27,7 +27,7 @@ import java.util.List;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
-    TextView textView_meal_name, textView_meal_source, textView_meal_summary, textView_meal_servings;
+    TextView textView_meal_name, textView_meal_source, textView_meal_servings;
     ImageView imageView_meal_image;
     RecyclerView recycler_meal_ingredients, recycler_meal_similar, recycler_meal_instructions;
     RequestManager manager;
@@ -54,7 +54,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     private void findViews() {
         textView_meal_name = findViewById(R.id.textView_meal_name);
         textView_meal_source = findViewById(R.id.textView_meal_source);
-        textView_meal_summary = findViewById(R.id.textView_meal_summary);
         imageView_meal_image = findViewById(R.id.imageView_meal_image);
         recycler_meal_ingredients=findViewById(R.id.recycler_meal_ingredients);
         recycler_meal_similar = findViewById(R.id.recycler_meal_similar);
@@ -67,7 +66,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             dialog.dismiss();
             textView_meal_name.setText(response.title);
             textView_meal_source.setText(response.sourceName);
-            textView_meal_summary.setText(response.summary);
             textView_meal_servings.setText(String.valueOf(response.servings));
             Picasso.get().load(response.image).into(imageView_meal_image);
             recycler_meal_ingredients.setHasFixedSize(true);
