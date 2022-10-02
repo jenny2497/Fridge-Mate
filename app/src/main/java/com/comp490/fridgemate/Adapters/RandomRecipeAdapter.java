@@ -68,7 +68,7 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
 
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         user = currentFirebaseUser.getUid();
-        holder.recipeDocRef = db.collection("users/" + user + "/categories/folders/Favorites").document(list.get(position).title);
+        holder.recipeDocRef = db.collection("users/" + user + "/categories/folders/Favorites").document(String.valueOf(list.get(position).id));
         holder.recipeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

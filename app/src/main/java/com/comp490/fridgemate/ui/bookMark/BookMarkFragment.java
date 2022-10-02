@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.comp490.fridgemate.CreateRecipeActivity;
 import com.comp490.fridgemate.InsideFolderActivity;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RecipeDetailsActivity;
@@ -69,6 +70,14 @@ public class BookMarkFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 startActivity(new Intent(getActivity(), InsideFolderActivity.class)
                         .putExtra("folderName", folderNames.get(i)));
+            }
+        });
+
+        Button addRecipe = root.findViewById(R.id.add_recipe_button);
+        addRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CreateRecipeActivity.class));
             }
         });
         return root;

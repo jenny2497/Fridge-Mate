@@ -1,15 +1,18 @@
 package com.comp490.fridgemate;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.comp490.fridgemate.Listeners.AutocompleteIngredientsListener;
 import com.comp490.fridgemate.Listeners.InstructionsListener;
+import com.comp490.fridgemate.Listeners.ParseIngredientsListener;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeDetailsListener;
 import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.Listeners.SimilarRecipesListener;
 import com.comp490.fridgemate.Models.AutocompleteIngredientsResponse;
 import com.comp490.fridgemate.Models.InstructionsResponse;
+import com.comp490.fridgemate.Models.ParseIngredientsResponse;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
@@ -17,13 +20,21 @@ import com.comp490.fridgemate.Models.SimilarRecipeResponse;
 
 import java.io.IOError;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -141,6 +152,36 @@ public class RequestManager {
         });
     }
 
+    public void parseIngredients(ParseIngredientsListener listener, List<String> query) {
+        CallParseIngredients callParseIngredients = retrofit.create(CallParseIngredients.class);
+        String ingredientsList = "";
+        for (int i = 0; i < query.size(); i++) {
+            ingredientsList += query.get(i);
+            if (i != query.size() - 1) {
+                ingredientsList += "\n";
+            }
+        }
+        Call<List<ParseIngredientsResponse>> call = callParseIngredients.callParseIngredients(context.getString(R.string.api_key), ingredientsList);
+        call.enqueue(new Callback<List<ParseIngredientsResponse>>() {
+            @Override
+            public void onResponse(Call<List<ParseIngredientsResponse>> call, Response<List<ParseIngredientsResponse>> response) {
+                if (!response.isSuccessful()) {
+                    listener.didError(response.message());
+                    Log.d("errormessage", response.errorBody().toString());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<List<ParseIngredientsResponse>> call, Throwable t) {
+                listener.didError(t.getMessage());
+                Log.d("throwable", t.getMessage());
+
+            }
+        });
+    }
+
     public void getRecipeFromIngredients(RecipeFromIngredientsListener listener, List<String> query) {
         CallRecipeFromIngredients callRecipeFromIngredients = retrofit.create(CallRecipeFromIngredients.class);
         String ingredientsList = "";
@@ -212,7 +253,7 @@ public class RequestManager {
 
     private interface CallRecipeFromIngredients {
         @GET("recipes/findByIngredients")
-        Call<List<RecipeFromIngredientsResponse>> callRecipeFromIngredients(
+        retrofit2.Call<List<RecipeFromIngredientsResponse>> callRecipeFromIngredients(
                 @Query("apiKey") String apiKey,
                 @Query("ingredients") String ingredients,
                 @Query("ranking") String ranking,
@@ -220,5 +261,16 @@ public class RequestManager {
 
 
                 );
+    }
+
+    private interface CallParseIngredients {
+        @FormUrlEncoded
+        @Headers("Content-Type: application/x-www-form-urlencoded")
+        @POST("recipes/parseIngredients")
+        retrofit2.Call<List<ParseIngredientsResponse>> callParseIngredients(
+                @Query("apiKey" ) String apiKey,
+                @Field("ingredientList") String ingredientList
+
+        );
     }
 }
