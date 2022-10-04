@@ -53,10 +53,13 @@ public class LoginActivity extends AppCompatActivity {
                 new AuthUI.IdpConfig.PhoneBuilder().build());
 
 
-        // Create and launch sign-in intent
+        // Create and launch sign-in intent2
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
+
+                .setLogo(R.drawable.transparent_fridgemate_logo)
+                .setTheme(R.style.LogInTheme)
                 .build();
         signInLauncher.launch(signInIntent);
         // [END auth_fui_create_intent]

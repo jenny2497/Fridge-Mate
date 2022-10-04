@@ -4,31 +4,46 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="../../../Library/Android/sdk/platforms/android-32/data/res/layout/activity_list_item.xml" value="0.1" />
+        <entry key="../../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.109375" />
+        <entry key="../../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.1" />
+        <entry key="../../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_checked.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_like.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_price.xml" value="0.114" />
         <entry key="app/src/main/res/drawable/ic_servings.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_time.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17826690673828127" />
-        <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.109375" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.109375" />
+        <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.1836734693877551" />
+        <entry key="app/src/main/res/layout/create_instruction.xml" value="0.11822916666666666" />
+        <entry key="app/src/main/res/layout/create_item.xml" value="0.1171875" />
+        <entry key="app/src/main/res/layout/create_recipe.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/folder_item.xml" value="0.21019108280254778" />
+        <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_fridge.xml" value="0.18189239501953125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3676148796498906" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.109375" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.5880559285481771" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.17578125" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.14950166112956811" />
+        <entry key="app/src/main/res/layout/fridge_ingredient_item.xml" value="0.23754789272030652" />
         <entry key="app/src/main/res/layout/list_instructions.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/list_instructions_step_items.xml" value="0.5523468017578126" />
+        <entry key="app/src/main/res/layout/list_instructions_step_items.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_instructions_steps.xml" value="0.10833333333333334" />
         <entry key="app/src/main/res/layout/list_meal_ingredients.xml" value="0.10422973632812493" />
-        <entry key="app/src/main/res/layout/list_random_recipe.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_random_recipe.xml" value="0.2600753784179688" />
+        <entry key="app/src/main/res/layout/list_recipe_from_ingredients.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_similar_recipe.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/login_activity.xml" value="0.10625" />
         <entry key="app/src/main/res/layout/spinner_inner_text.xml" value="0.10833333333333334" />
         <entry key="app/src/main/res/layout/spinner_text.xml" value="0.10833333333333334" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.6102127075195313" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

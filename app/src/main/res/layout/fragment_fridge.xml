@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.fridge.FridgeFragment" >
+
+    <AutoCompleteTextView
+        android:id="@+id/add_fridge_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Add Food Item..."
+        android:completionThreshold="2"
+        android:hint="Add Food Item..."
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fridge contains: "
+        android:textSize="24sp"/>
+
+    <ListView
+        android:id="@+id/listView_fridge_ingredients"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

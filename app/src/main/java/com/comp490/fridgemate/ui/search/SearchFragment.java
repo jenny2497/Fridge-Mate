@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,7 +26,6 @@ import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RecipeDetailsActivity;
 import com.comp490.fridgemate.RequestManager;
-import com.comp490.fridgemate.databinding.FragmentHomeBinding;
 import com.comp490.fridgemate.databinding.FragmentSearchBinding;
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class SearchFragment extends Fragment {
             recyclerView = getActivity().findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener);
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener, false);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
