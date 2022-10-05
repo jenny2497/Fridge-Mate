@@ -73,6 +73,7 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/favorited_linear_layout"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_width="0dp"

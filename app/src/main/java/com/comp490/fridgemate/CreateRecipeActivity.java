@@ -3,15 +3,25 @@ package com.comp490.fridgemate;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,12 +40,19 @@ import com.comp490.fridgemate.Models.InstructionsResponse;
 import com.comp490.fridgemate.Models.ParseIngredientsResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
 import com.comp490.fridgemate.Models.SimilarRecipeResponse;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,12 +68,19 @@ public class CreateRecipeActivity extends AppCompatActivity {
     RequestManager manager;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference recipeDocRef;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    FirebaseUser currentFirebaseUser;
+    String user;
+    StorageReference storageReference;
+    ActivityResultLauncher<String> activityResultLauncher;
+    Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_recipe);
         findViews();
+        storageReference = storage.getReference();
         List<String> ingredientsPlaceholder = new ArrayList<>();
         ingredientsPlaceholder.add("");
         List<String> instructionsPlaceholder = new ArrayList<>();
@@ -93,7 +117,31 @@ public class CreateRecipeActivity extends AppCompatActivity {
 
             }
         });
+        activityResultLauncher= registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+            @Override
+            public void onActivityResult(Uri result) {
+        if (result != null) {
+            try {
+                imageUri = result;
+                imageView_create_meal_image.setImageURI(result);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+            }
+        });
+        imageView_create_meal_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requestImage();
+            }
+        });
 
+    }
+
+    private void requestImage() {
+
+        activityResultLauncher.launch("image/*");
     }
     private void findViews() {
         editText_meal_name = findViewById(R.id.editText_meal_name);
@@ -113,33 +161,64 @@ public class CreateRecipeActivity extends AppCompatActivity {
         @Override
         public void didFetch(List<ParseIngredientsResponse> response, String message) {
             List<String> parsedIngredients = new ArrayList();
+            String cookTime = editText_cook_time.getText().toString();
+            Long cookTimeLong = -1L;
+            Long prepTimeLong = -1L;
+            boolean startIntent = true;
+            String servingsString = editText_meal_servings.getText().toString();
+            Long servings = -1L;
+            try {
+                cookTimeLong = Long.parseLong(cookTime);
+                String prepTime = editText_prep_time.getText().toString();
+                prepTimeLong = Long.parseLong(prepTime);
+                servings = Long.parseLong(servingsString);
+            } catch (Exception e) { // if nothing was entered or it cannot be converted to a long value
+                startIntent = false;
+                //todo: make toast ordering person to add value to cooktime and preptime
+            }
+
             for (int i = 0; i <response.size();i++) {
                 parsedIngredients.add(response.get(i).name);
             }
-            String readyInMinutes = "-1";
+            Long readyInMinutes = -1L;
             try {
-                readyInMinutes = String.valueOf(Integer.valueOf(editText_cook_time.toString()) + Integer.valueOf(editText_prep_time.toString()));
+                readyInMinutes = cookTimeLong + prepTimeLong;
             } catch (Exception E) {
+                startIntent = false;
                 //todo: make toast that displays that units were entered for cook or prep time
             }
             Map<String, Object> recipeData = new HashMap<>();
-            recipeData.put("recipeName", editText_meal_name.getText().toString());
-            recipeData.put("ingredients", createAdapterIngredients.listToSave);
-            recipeData.put("parsedIngredients", parsedIngredients);
-            recipeData.put("instructions", createAdapterInstructions.listToSave);
-            recipeData.put("readyInMinutes", readyInMinutes);
-            recipeData.put("preparationMinutes", editText_prep_time.getText().toString());
-            recipeData.put("cookingMinutes", editText_cook_time.getText().toString());
-            recipeData.put("image", "adding later this is a todo");
-            recipeData.put("fromSpoonacular", false);
-            recipeData.put("servings", editText_meal_servings.getText().toString());
-            recipeData.put("id", createAdapterInstructions.listToSave.hashCode());
-            FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-            String user = currentFirebaseUser.getUid();
-            recipeDocRef = db.collection("users/" + user + "/categories/folders/MyRecipes").document(String.valueOf(id));
-            recipeDocRef.set(recipeData);
-            startActivity(new Intent(CreateRecipeActivity.this, MainActivity.class)
-                    .putExtra("id", createAdapterInstructions.listToSave.hashCode()));
+            String recipeName = editText_meal_name.getText().toString();
+            if (recipeName.equals("") || cookTimeLong==-1L || prepTimeLong == -1L || servings == -1L ||
+                    createAdapterIngredients.listToSave.size() == 0 || createAdapterInstructions.listToSave.size() == 0) {
+                startIntent = false;
+                //todo: make toast that says must enter recipe name
+
+            } else {
+                recipeData.put("recipeName", recipeName);
+                recipeData.put("ingredients", createAdapterIngredients.listToSave);
+                recipeData.put("parsedIngredients", parsedIngredients);
+                recipeData.put("instructions", createAdapterInstructions.listToSave);
+                recipeData.put("readyInMinutes", readyInMinutes);
+                recipeData.put("preparationMinutes", prepTimeLong);
+                recipeData.put("cookingMinutes", cookTimeLong);
+                recipeData.put("image", "adding later this is a todo");
+                recipeData.put("fromMyRecipes", new Boolean(true));
+                recipeData.put("servings", servings);
+                recipeData.put("id", recipeName.hashCode());
+                currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+                user = currentFirebaseUser.getUid();
+                recipeDocRef = db.collection("users/" + user + "/categories/folders/MyRecipes").document(String.valueOf(recipeName.hashCode()));
+                recipeDocRef.set(recipeData);
+                saveImageInFirebase(String.valueOf(recipeName.hashCode()));
+
+            }
+
+            if (startIntent) {
+                startActivity(new Intent(CreateRecipeActivity.this, InsideFolderActivity.class)
+                        .putExtra("folderName", "MyRecipes"));
+            }
+
 
             //todo: add check to make sure we're not replacing a recipe that already exists
         }
@@ -150,5 +229,37 @@ public class CreateRecipeActivity extends AppCompatActivity {
             Log.d("sad", message);
         }
     };
+    private void saveImageInFirebase(String recipeId) {
+        if (imageUri != null) {
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Please Wait...");
+            progressDialog.show();
+            StorageReference reference = storageReference.child("users/" + user + "/categories/folders/MyRecipes/" + recipeId);
+            try {
+                reference.putFile(imageUri);
+//                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                            @Override
+//                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//
+//                            }
+//                        })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//
+//                            }
+//                        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                            @Override
+//                            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+//                                double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+//                                progressDialog.setMessage("Saved" + (int) progress + "%");
+//
+//                            }
+//                        });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

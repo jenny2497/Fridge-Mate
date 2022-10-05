@@ -31,9 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
             <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center"
@@ -52,11 +54,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
-            <ImageView
-                android:id="@+id/imageView_favorited_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_outline_favorite_border_24"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView_favorited_home"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_outline_favorite_border_24"-->
+<!--                android:layout_marginLeft="48dp"/>-->
 
         </LinearLayout>
     </LinearLayout>

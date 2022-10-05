@@ -23,8 +23,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.comp490.fridgemate.Adapters.RandomRecipeAdapter;
 import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeClickListener;
+import com.comp490.fridgemate.Models.AnalyzedInstruction;
+import com.comp490.fridgemate.Models.ExtendedIngredient;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.Recipe;
+import com.comp490.fridgemate.Models.Step;
 import com.comp490.fridgemate.databinding.FragmentSearchBinding;
 import com.comp490.fridgemate.ui.search.SearchViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -47,6 +50,7 @@ public class InsideFolderActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser currentFirebaseUser;
     String user;
+    boolean inMyRecipes;
 
 
     @Override
@@ -77,6 +81,12 @@ public class InsideFolderActivity extends AppCompatActivity {
             }
         });
         String folderName = getIntent().getStringExtra("folderName");
+        if (folderName.equals("My Recipes")) {
+            folderName = "MyRecipes";
+            inMyRecipes = true;
+        } else {
+            inMyRecipes = false;
+        }
         Log.d("foldername", folderName);
 
         // [START get_multiple_all]
@@ -92,11 +102,43 @@ public class InsideFolderActivity extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Recipe newRecipe = new Recipe();
                                     Log.d("doc", document.getId() + " => " + document.getData());
+                                    try {
+                                        newRecipe.readyInMinutes = (int) (long) document.getData().get("readyInMinutes");
+                                        newRecipe.servings = (int) (long) document.getData().get("servings");
+                                        newRecipe.title = (String) document.getData().get("recipeName");
+                                        newRecipe.id = (int) (long) document.getData().get("id");
+                                        newRecipe.extendedIngredients = new ArrayList<ExtendedIngredient>();
+                                        List<String> ingredientOriginals = (List<String>) document.getData().get("ingredients");
+                                        List<String> parsedIngredients = (List<String>) document.getData().get("parsedIngredients");
+                                        for (int i=0; i < ingredientOriginals.size(); i++) {
+                                            ExtendedIngredient toAdd = new ExtendedIngredient();
+                                            toAdd.name = parsedIngredients.get(i);
+                                            toAdd.original = ingredientOriginals.get(i);
+                                            newRecipe.extendedIngredients.add(toAdd);
+                                        }
 
-                                    newRecipe.readyInMinutes = (int) (long) document.getData().get("readyInMinutes");
-                                    newRecipe.servings = (int) (long) document.getData().get("servings");
-                                    newRecipe.title = (String) document.getData().get("recipeName");
-                                    newRecipe.id = (int) (long) document.getData().get("id");
+                                        List<String> steps = (List<String>) document.getData().get("instructions");
+                                        AnalyzedInstruction analyzedInstruction = new AnalyzedInstruction();
+                                        ArrayList<Step> stepsInsideInstruction = new ArrayList<>();
+
+                                        for (int i = 0; i < steps.size(); i++) {
+                                            Step toAdd = new Step();
+                                            toAdd.step = steps.get(i);
+                                            stepsInsideInstruction.add(toAdd);
+                                        }
+                                        analyzedInstruction.steps = stepsInsideInstruction;
+                                        ArrayList<AnalyzedInstruction> analyzedInstructions = new ArrayList<>();
+                                        analyzedInstructions.add(analyzedInstruction);
+                                        newRecipe.analyzedInstructions = analyzedInstructions;
+
+                                        newRecipe.preparationMinutes  = (int) (long) document.getData().get("preparationMinutes");
+                                        newRecipe.cookingMinutes = (int) (long) document.getData().get("cookingMinutes");
+                                        newRecipe.fromMyRecipes = (boolean) document.getData().get("fromMyRecipes");
+
+                                    } catch (Exception e){
+
+                                    }
+
                                     newRecipe.image = (String) document.getData().get("image");
                                     recipesInFolder.add(newRecipe);
 
@@ -105,7 +147,7 @@ public class InsideFolderActivity extends AppCompatActivity {
                                 recyclerView = findViewById(R.id.recycler_random);
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new GridLayoutManager(InsideFolderActivity.this, 1));
-                                recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, true);
+                                recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, true, inMyRecipes);
                                 recyclerView.setAdapter(recipeAdapter);
                             } else {
                                 Log.d("doc", "Error getting documents: ", task.getException());

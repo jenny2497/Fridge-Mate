@@ -49,7 +49,7 @@ public class SearchFragment extends Fragment {
             recyclerView = getActivity().findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener, false);
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener, false, false);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
