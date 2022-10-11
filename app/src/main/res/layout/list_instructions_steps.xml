@@ -35,44 +35,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="Equipment"
-                android:textColor="@color/blue"
-                android:textAlignment="textStart"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_instructions_equipment"
-                android:layout_margin="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="Ingredients"
-                android:textColor="@color/blue"
-                android:textAlignment="textStart"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_instructions_ingredients"
-                android:layout_margin="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

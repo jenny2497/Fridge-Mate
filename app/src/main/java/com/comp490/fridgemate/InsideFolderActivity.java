@@ -124,6 +124,7 @@ public class InsideFolderActivity extends AppCompatActivity {
                                         for (int i = 0; i < steps.size(); i++) {
                                             Step toAdd = new Step();
                                             toAdd.step = steps.get(i);
+                                            toAdd.number = i + 1;
                                             stepsInsideInstruction.add(toAdd);
                                         }
                                         analyzedInstruction.steps = stepsInsideInstruction;
@@ -147,7 +148,7 @@ public class InsideFolderActivity extends AppCompatActivity {
                                 recyclerView = findViewById(R.id.recycler_random);
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new GridLayoutManager(InsideFolderActivity.this, 1));
-                                recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, true, inMyRecipes);
+                                recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, !inMyRecipes, inMyRecipes);
                                 recyclerView.setAdapter(recipeAdapter);
                             } else {
                                 Log.d("doc", "Error getting documents: ", task.getException());
@@ -188,9 +189,14 @@ public class InsideFolderActivity extends AppCompatActivity {
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
-        public void onRecipeClicked(String id) {
-            startActivity(new Intent(InsideFolderActivity.this, RecipeDetailsActivity.class)
-                    .putExtra("id", id));
+        public void onRecipeClicked(String id, boolean fromSpoonacular, String folderName) {
+            Intent intent = new Intent(InsideFolderActivity.this, RecipeDetailsActivity.class);
+            Bundle extras = new Bundle();
+            extras.putString("id", id);
+            extras.putBoolean("fromSpoonacular", fromSpoonacular);
+            extras.putString("folderName", folderName);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     };
 }

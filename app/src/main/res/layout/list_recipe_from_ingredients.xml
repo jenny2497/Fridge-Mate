@@ -39,7 +39,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
                 <ImageView
@@ -54,12 +54,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView_favorited_home"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_outline_favorite_border_24"-->
-<!--                android:layout_marginLeft="48dp"/>-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Missing Ingredients: "
+                    android:textColor="@color/black"/>
+                <com.comp490.fridgemate.MyListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listView_missing_ingredients"
+                    />
+
+
+
+            </LinearLayout>
+            <!--            <ImageView-->
+            <!--                android:id="@+id/imageView_favorited_home"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:src="@drawable/ic_outline_favorite_border_24"-->
+            <!--                android:layout_marginLeft="48dp"/>-->
 
         </LinearLayout>
     </LinearLayout>

@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.comp490.fridgemate.Models.InstructionsResponse;
+import com.comp490.fridgemate.Models.AnalyzedInstruction;
 import com.comp490.fridgemate.R;
 
 import java.util.List;
 
 public class InstructionsAdapter extends RecyclerView.Adapter<InstructionsViewHolder> {
     Context context;
-    List<InstructionsResponse> list;
+    List<AnalyzedInstruction> list;
 
-    public InstructionsAdapter(Context context, List<InstructionsResponse> list) {
+    public InstructionsAdapter(Context context, List<AnalyzedInstruction> list) {
         this.context = context;
         this.list = list;
     }

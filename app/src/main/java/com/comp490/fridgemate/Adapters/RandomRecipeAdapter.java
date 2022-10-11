@@ -140,7 +140,15 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         holder.random_list_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
+            String folderName;
+            if (inFavoritesFolder) {
+                folderName = "Favorites";
+            } else if (inMyRecipes) {
+                folderName = "MyRecipes";
+            } else {
+                folderName = "";
+            }
+            listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id), holder.recipeFromSpoonacular, folderName);
             }
         });
 
@@ -158,13 +166,21 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         ArrayList ingredients = new ArrayList();
         ArrayList parsedIngredients = new ArrayList();
         ArrayList instructions = new ArrayList();
+        ArrayList ingredientsImages = new ArrayList();
         if (list.get(position) != null) {
             for (int i=0; i < list.get(position).extendedIngredients.size(); i++) {
                 String amount = String.valueOf(list.get(position).extendedIngredients.get(i).amount);
+                if (amount == "0.0") {
+                    amount = "";
+                }
                 String units = list.get(position).extendedIngredients.get(i).unit;
+                if (units == null) {
+                    units = "";
+                }
                 String ingredientName = list.get(position).extendedIngredients.get(i).name;
                 ingredients.add(amount + " " + units + " " + ingredientName);
                 parsedIngredients.add(ingredientName);
+                ingredientsImages.add(list.get(position).extendedIngredients.get(i).image);
             }
             for (int i=0; i< list.get(position).analyzedInstructions.get(0).steps.size(); i++) {
                 instructions.add(list.get(position).analyzedInstructions.get(0).steps.get(i).step);
@@ -172,6 +188,7 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
 
             recipeData.put("ingredients", ingredients);
             recipeData.put("parsedIngredients", parsedIngredients);
+            recipeData.put("ingredientsImages", ingredientsImages);
             recipeData.put("instructions", instructions);
             recipeData.put("readyInMinutes", list.get(position).readyInMinutes);
             recipeData.put("preparationMinutes", list.get(position).preparationMinutes);

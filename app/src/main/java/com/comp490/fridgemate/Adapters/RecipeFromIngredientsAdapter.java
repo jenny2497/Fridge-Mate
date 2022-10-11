@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,7 @@ import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFromIngredientsViewHolder> {
@@ -48,9 +51,17 @@ public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFro
         holder.recipe_from_ingredients_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
+                listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id), true, "");
             }
         });
+        List<String> missingIngredientsNames = new ArrayList<>();
+        for (int i=0; i<list.get(position).missedIngredients.size(); i++) {
+            missingIngredientsNames.add(list.get(position).missedIngredients.get(i).name);
+        }
+        if (missingIngredientsNames.size() == 0) {
+            missingIngredientsNames.add("No missing ingredients!");
+        }
+        holder.listView_missing_ingredients.setAdapter(new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, missingIngredientsNames));
     }
 
     @Override
@@ -63,6 +74,7 @@ class RecipeFromIngredientsViewHolder extends RecyclerView.ViewHolder {
     CardView recipe_from_ingredients_container;
     TextView textView_title, textView_missingIngredients;
     ImageView imageView_food;
+    ListView listView_missing_ingredients;
 
     public RecipeFromIngredientsViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -70,6 +82,7 @@ class RecipeFromIngredientsViewHolder extends RecyclerView.ViewHolder {
         textView_title = itemView.findViewById(R.id.textView_title);
         textView_missingIngredients = itemView.findViewById(R.id.textView_missingIngredients);
         imageView_food = itemView.findViewById(R.id.imageView_food);
+        listView_missing_ingredients = itemView.findViewById(R.id.listView_missing_ingredients);
 
 
     }

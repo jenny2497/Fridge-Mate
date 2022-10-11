@@ -54,6 +54,7 @@ public class FridgeFragment extends Fragment {
     DocumentReference fridgeDocRef;
     String user;
     ArrayList<String> fridgeItems = new ArrayList<>();
+    ArrayList<String> fridgeImages = new ArrayList<>();
     ListView fridgeIngredients;
     ArrayAdapter<String> fridgeIngredientsAdapter;
 
@@ -77,16 +78,20 @@ public class FridgeFragment extends Fragment {
 
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String image = response.get(position).image;
                     String selection = (String)parent.getItemAtPosition(position);
                     fridgeItems.add(selection);
+                    fridgeImages.add(image);
                     fridgeIngredientsAdapter.notifyDataSetChanged();
                     if (needToCreateFridge) {
                         Map<String, Object> fridgeData = new HashMap<>();
                         fridgeData.put("fridge", Arrays.asList(selection));
+                        fridgeData.put("fridgeImages", Arrays.asList(image));
                         fridgeDocRef.set(fridgeData);
                         needToCreateFridge = false;
                     } else {
                         fridgeDocRef.update("fridge", FieldValue.arrayUnion(selection));
+                        fridgeDocRef.update("fridgeImages", FieldValue.arrayUnion(image));
                     }
                     Log.d("test", selection);
                     addFridgeItem.setText("");
@@ -157,6 +162,7 @@ public class FridgeFragment extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         fridgeItems = (ArrayList<String>) document.getData().get("fridge");
+                        fridgeImages = (ArrayList<String>) document.getData().get("fridgeImages");
                         Log.d("TAG", "DocumentSnapshot data: " + fridgeItems);
                         fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems) {
                             @Override
@@ -168,6 +174,7 @@ public class FridgeFragment extends Fragment {
                                     public void onClick(View view) {
                                         Log.d("TAG", "item clicked " + fridgeItems.get(position));
                                         fridgeDocRef.update("fridge", FieldValue.arrayRemove(fridgeItems.get(position)));
+                                        fridgeDocRef.update("fridgeImages", FieldValue.arrayRemove(fridgeImages.get(position)));
                                         fridgeItems.remove(position);
                                         fridgeIngredientsAdapter.notifyDataSetChanged();
 

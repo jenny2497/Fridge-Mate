@@ -2,7 +2,7 @@ package com.comp490.fridgemate.Models;
 
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe extends RecipeDetailsResponse {
     public boolean vegetarian;
     public boolean vegan;
     public boolean glutenFree;

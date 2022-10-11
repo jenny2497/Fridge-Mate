@@ -10,29 +10,24 @@ import com.comp490.fridgemate.Listeners.RandomRecipeResponseListener;
 import com.comp490.fridgemate.Listeners.RecipeDetailsListener;
 import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.Listeners.SimilarRecipesListener;
+import com.comp490.fridgemate.Models.AnalyzedInstruction;
 import com.comp490.fridgemate.Models.AutocompleteIngredientsResponse;
-import com.comp490.fridgemate.Models.InstructionsResponse;
 import com.comp490.fridgemate.Models.ParseIngredientsResponse;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.Models.SimilarRecipeResponse;
 
-import java.io.IOError;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.Field;
-import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -113,10 +108,10 @@ public class RequestManager {
 
     public void getInstructions(InstructionsListener listener, int id){
         CallInstructions callInstructions = retrofit.create(CallInstructions.class);
-        Call<List<InstructionsResponse>> call = callInstructions.callInstructions(id, context.getString(R.string.api_key));
-        call.enqueue(new Callback<List<InstructionsResponse>>() {
+        Call<List<AnalyzedInstruction>> call = callInstructions.callInstructions(id, context.getString(R.string.api_key));
+        call.enqueue(new Callback<List<AnalyzedInstruction>>() {
             @Override
-            public void onResponse(Call<List<InstructionsResponse>> call, Response<List<InstructionsResponse>> response) {
+            public void onResponse(Call<List<AnalyzedInstruction>> call, Response<List<AnalyzedInstruction>> response) {
                 if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
@@ -125,7 +120,7 @@ public class RequestManager {
             }
 
             @Override
-            public void onFailure(Call<List<InstructionsResponse>> call, Throwable t) {
+            public void onFailure(Call<List<AnalyzedInstruction>> call, Throwable t) {
                 listener.didError(t.getMessage());
             }
         });
@@ -236,7 +231,7 @@ public class RequestManager {
     }
     private interface CallInstructions {
         @GET("recipes/{id}/analyzedInstructions")
-        Call<List<InstructionsResponse>> callInstructions(
+        Call<List<AnalyzedInstruction>> callInstructions(
           @Path("id") int id,
           @Query("apiKey") String apiKey
         );

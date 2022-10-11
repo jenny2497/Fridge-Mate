@@ -160,9 +160,13 @@ public class HomeFragment extends Fragment {
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
-        public void onRecipeClicked(String id) {
-            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
-                    .putExtra("id", id));
+        public void onRecipeClicked(String id, boolean fromSpoonacular, String folderName) {
+            Intent intent = new Intent(getActivity(), RecipeDetailsActivity.class);
+            Bundle extras = new Bundle();
+            extras.putString("id", id);
+            extras.putBoolean("fromSpoonacular", true);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     };
 }

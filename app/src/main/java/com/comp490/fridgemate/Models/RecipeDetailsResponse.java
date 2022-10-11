@@ -17,7 +17,7 @@ public class RecipeDetailsResponse {
     public double healthScore;
     public double spoonacularScore;
     public double pricePerServing;
-    public ArrayList<Object> analyzedInstructions;
+    public ArrayList<AnalyzedInstruction> analyzedInstructions;
     public boolean cheap;
     public String creditsText;
     public ArrayList<Object> cuisines;

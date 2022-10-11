@@ -89,7 +89,8 @@
                 android:padding="8dp"
                 android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/similar_recipe_label"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_meal_similar"
                 android:layout_margin="8dp"
