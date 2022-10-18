@@ -64,6 +64,7 @@ public class InsideFolderActivity extends AppCompatActivity {
 
       dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
+        dialog.show();
         searchView = findViewById(R.id.searchView_home);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -99,6 +100,7 @@ public class InsideFolderActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
+                                dialog.dismiss();
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Recipe newRecipe = new Recipe();
                                     Log.d("doc", document.getId() + " => " + document.getData());
@@ -148,6 +150,11 @@ public class InsideFolderActivity extends AppCompatActivity {
                                 recyclerView = findViewById(R.id.recycler_random);
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new GridLayoutManager(InsideFolderActivity.this, 1));
+                                if (inMyRecipes) {
+                                    inMyRecipes = true;
+                                } else {
+                                    inMyRecipes = false;
+                                }
                                 recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, !inMyRecipes, inMyRecipes);
                                 recyclerView.setAdapter(recipeAdapter);
                             } else {

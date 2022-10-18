@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
     TextView textView_meal_name, textView_meal_source, textView_meal_servings, similar_recipe_label;
     ImageView imageView_meal_image, imageView_favorited_main;
+    Button edit_button;
     RecyclerView recycler_meal_ingredients, recycler_meal_similar, recycler_meal_instructions;
     RequestManager manager;
     ProgressDialog dialog;
@@ -87,11 +89,21 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             manager.getRecipeDetails(recipeDetailsListener, id);
             manager.getSimilarRecipes(similarRecipesListener, id);
             manager.getInstructions(instructionsListener, id);
+            edit_button.setVisibility(View.INVISIBLE);
         } else {
             Log.d("are we here", "no");
             similar_recipe_label.setVisibility(View.INVISIBLE);
             String folderName = extras.getString("folderName");
             recycler_meal_similar.setVisibility(View.INVISIBLE);
+            edit_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(RecipeDetailsActivity.this,
+                            CreateRecipeActivity.class);
+                    intent.putExtra("recipeId", (int) recipeData.get("id"));
+                    startActivity(intent);
+                }
+            });
             DocumentReference recipeDocRef = db.collection("users/" + user + "/categories/folders/" + folderName).document(String.valueOf(id));
             Log.d("file path", "users/" + user + "/categories/folders/" + folderName + "/" + id);
             recipeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -226,6 +238,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         textView_meal_servings = findViewById(R.id.textView_meal_servings);
         imageView_favorited_main = findViewById(R.id.imageView_favorited_main);
         similar_recipe_label = findViewById(R.id.similar_recipe_label);
+        edit_button = findViewById(R.id.edit_button);
     }
 
     private void createRecipeDataForFavorites(RecipeDetailsResponse response, boolean fromMyRecipes) {

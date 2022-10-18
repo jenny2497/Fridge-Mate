@@ -9,24 +9,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.comp490.fridgemate.Adapters.CreateAdapter;
+import com.comp490.fridgemate.Adapters.IngredientsAdapter;
+import com.comp490.fridgemate.Adapters.InstructionsAdapter;
 import com.comp490.fridgemate.Listeners.ParseIngredientsListener;
+import com.comp490.fridgemate.Models.AnalyzedInstruction;
+import com.comp490.fridgemate.Models.ExtendedIngredient;
 import com.comp490.fridgemate.Models.ParseIngredientsResponse;
+import com.comp490.fridgemate.Models.Recipe;
+import com.comp490.fridgemate.Models.Step;
 import com.comp490.fridgemate.ui.bookMark.BookMarkFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,17 +85,81 @@ public class CreateRecipeActivity extends AppCompatActivity {
         recycler_create_meal_ingredients.setHasFixedSize(false);
         recycler_create_meal_ingredients.setLayoutManager(new GridLayoutManager(this, 1));
 
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        user = currentFirebaseUser.getUid();
+
+        Intent intent = getIntent();
+        id = intent.getIntExtra("recipeId", 5);
+        if (id != 5) {
+            //we are editing a recipe we already added
+            Log.d(String.valueOf(id), "recipe");
+            DocumentReference recipeDocRef = db.collection("users/" + user + "/categories/folders/MyRecipes").document(String.valueOf(id));
+            recipeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+
+//                            Recipe newRecipe = new Recipe();
+                            Log.d("doc", document.getId() + " => " + document.getData());
+                            try {
+                                editText_prep_time.setText(String.valueOf((int) (long) document.getData().get("preparationMinutes")));
+                                editText_meal_servings.setText(String.valueOf((int) (long) document.getData().get("servings")));
+                                editText_meal_name.setText((String) document.getData().get("recipeName"));
+                                editText_cook_time.setText(String.valueOf((int) (long) document.getData().get("cookingMinutes")));
+
+
+                                createAdapterIngredients.listToSave = (List<String>) document.getData().get("ingredients");
+                                createAdapterIngredients.notifyDataSetChanged();
+
+                                createAdapterInstructions.listToSave = (List<String>) document.getData().get("instructions");
+                                createAdapterInstructions.notifyDataSetChanged();
+
+
+                            } catch (Exception e){
+
+                            }
+
+
+
+
+
+                            StorageReference imgRef = storage.getReference();
+                            StorageReference imgRefWithPath = imgRef.child("users/" + user + "/categories/folders/MyRecipes/" + id);
+                            imgRefWithPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    Picasso.get().load(uri).into(imageView_create_meal_image);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    e.printStackTrace();
+                                    Log.d("for some reason", "won't display");
+                                }
+                            });
+
+                        } else {
+                            Log.d("no doc", "where is it?");
+                        }
+                    } else {
+                        Log.d("TAG", "Failed with: ", task.getException());
+                    }
+                }
+            });
+        }
         add_ingredient_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ingredientsPlaceholder.add("");
+                createAdapterIngredients.listToSave.add("");
                 createAdapterIngredients.notifyDataSetChanged();
             }
         });
         add_instruction_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                instructionsPlaceholder.add("");
+                createAdapterInstructions.listToSave.add("");
                 createAdapterInstructions.notifyDataSetChanged();
             }
         });
@@ -135,6 +214,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
     private final ParseIngredientsListener parseIngredientsListener = new ParseIngredientsListener() {
         @Override
         public void didFetch(List<ParseIngredientsResponse> response, String message) {
+            String errorMessage = "Please make sure all sections are filled out.";
             List<String> parsedIngredients = new ArrayList();
             List<String> ingredientsImages = new ArrayList();
             String cookTime = editText_cook_time.getText().toString();
@@ -150,6 +230,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
                 servings = Long.parseLong(servingsString);
             } catch (Exception e) { // if nothing was entered or it cannot be converted to a long value
                 startIntent = false;
+                errorMessage = "Please enter cook time, prep time, and number of servings as integers.";
                 //todo: make toast ordering person to add value to cooktime and preptime
             }
 
@@ -169,7 +250,6 @@ public class CreateRecipeActivity extends AppCompatActivity {
             if (recipeName.equals("") || cookTimeLong==-1L || prepTimeLong == -1L || servings == -1L ||
                     createAdapterIngredients.listToSave.get(0) == "" || createAdapterInstructions.listToSave.get(0) == "") {
                 startIntent = false;
-                //todo: make toast that says must enter recipe name
 
             } else {
                 recipeData.put("recipeName", recipeName);
@@ -184,8 +264,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
                 recipeData.put("fromMyRecipes", new Boolean(true));
                 recipeData.put("servings", servings);
                 recipeData.put("id", recipeName.hashCode());
-                currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-                user = currentFirebaseUser.getUid();
+
                 recipeDocRef = db.collection("users/" + user + "/categories/folders/MyRecipes").document(String.valueOf(recipeName.hashCode()));
                 recipeDocRef.set(recipeData);
                 saveImageInFirebase(String.valueOf(recipeName.hashCode()));
@@ -194,7 +273,11 @@ public class CreateRecipeActivity extends AppCompatActivity {
 
             if (startIntent) {
                 startActivity(new Intent(CreateRecipeActivity.this, MainActivity.class));
+            } else {
+                Toast.makeText(CreateRecipeActivity.this, errorMessage,
+                        Toast.LENGTH_LONG).show();
             }
+
 
 
             //todo: add check to make sure we're not replacing a recipe that already exists

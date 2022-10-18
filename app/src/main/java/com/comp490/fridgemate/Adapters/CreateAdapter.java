@@ -53,11 +53,16 @@ public class CreateAdapter extends RecyclerView.Adapter<CreateViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CreateViewHolder holder, int position) {
-        if (ingredients) {
-            holder.editText_item.setHint("Add Ingredient and Amount");
+        if (listToSave.get(position) != "") {
+            holder.editText_item.setText(listToSave.get(position));
         } else {
-            holder.editText_item.setHint("Add Instruction");
+            if (ingredients) {
+                holder.editText_item.setHint("Add Ingredient and Amount");
+            } else {
+                holder.editText_item.setHint("Add Instruction");
+            }
         }
+
 
         holder.editText_item.addTextChangedListener(new TextWatcher() {
             @Override
