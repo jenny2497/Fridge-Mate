@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -169,6 +171,9 @@ public class FridgeFragment extends Fragment {
                             public View getView(final int position, View convertView, ViewGroup parent) {
                                 View inflatedView = super.getView(position, convertView, parent);
                                 Button deleteIngredientButton = inflatedView.findViewById(R.id.delete_ingredient);
+                                ImageView ingredientImage = inflatedView.findViewById(R.id.imageView_ingredient_fridge_image);
+                                Picasso.get().load("https://spoonacular.com/cdn/ingredients_100x100/"+ fridgeImages.get(position)).into(ingredientImage);
+
                                 deleteIngredientButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -176,6 +181,7 @@ public class FridgeFragment extends Fragment {
                                         fridgeDocRef.update("fridge", FieldValue.arrayRemove(fridgeItems.get(position)));
                                         fridgeDocRef.update("fridgeImages", FieldValue.arrayRemove(fridgeImages.get(position)));
                                         fridgeItems.remove(position);
+                                        fridgeImages.remove(position);
                                         fridgeIngredientsAdapter.notifyDataSetChanged();
 
                                     }

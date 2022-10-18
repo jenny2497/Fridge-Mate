@@ -130,7 +130,7 @@ public class SearchFragment extends Fragment {
             Intent intent = new Intent(getActivity(), RecipeDetailsActivity.class);
             Bundle extras = new Bundle();
             extras.putString("id", id);
-            extras.putBoolean("fromSpoonacular", false);
+            extras.putBoolean("fromSpoonacular", true);
             intent.putExtras(extras);
             startActivity(intent);
         }

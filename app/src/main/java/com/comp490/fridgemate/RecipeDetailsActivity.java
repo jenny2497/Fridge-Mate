@@ -138,7 +138,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                                 newRecipe.preparationMinutes  = (int) (long) document.getData().get("preparationMinutes");
                                 newRecipe.cookingMinutes = (int) (long) document.getData().get("cookingMinutes");
                                 newRecipe.fromMyRecipes = (boolean) document.getData().get("fromMyRecipes");
-                                dialog.dismiss();
 
 
                             } catch (Exception e){
@@ -269,6 +268,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             favoritedDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    dialog.dismiss();
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
@@ -290,7 +290,6 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     private final RecipeDetailsListener recipeDetailsListener = new RecipeDetailsListener() {
         @Override
         public void didFetch(RecipeDetailsResponse response, String message) {
-            dialog.dismiss();
             textView_meal_name.setText(response.title);
             textView_meal_source.setText(response.sourceName);
             textView_meal_servings.setText(String.valueOf(response.servings));
@@ -332,7 +331,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             Intent intent = new Intent(RecipeDetailsActivity.this, RecipeDetailsActivity.class);
             Bundle extras = new Bundle();
             extras.putString("id", id);
-            extras.putBoolean("fromSpoonacular", true);
+            extras.putBoolean("fromSpoonacular", fromSpoonacular);
             intent.putExtras(extras);
             startActivity(intent);
 

@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.comp490.fridgemate.Adapters.CreateAdapter;
 import com.comp490.fridgemate.Listeners.ParseIngredientsListener;
 import com.comp490.fridgemate.Models.ParseIngredientsResponse;
+import com.comp490.fridgemate.ui.bookMark.BookMarkFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -166,7 +167,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
             Map<String, Object> recipeData = new HashMap<>();
             String recipeName = editText_meal_name.getText().toString();
             if (recipeName.equals("") || cookTimeLong==-1L || prepTimeLong == -1L || servings == -1L ||
-                    createAdapterIngredients.listToSave.size() == 0 || createAdapterInstructions.listToSave.size() == 0) {
+                    createAdapterIngredients.listToSave.get(0) == "" || createAdapterInstructions.listToSave.get(0) == "") {
                 startIntent = false;
                 //todo: make toast that says must enter recipe name
 
@@ -192,8 +193,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
             }
 
             if (startIntent) {
-                startActivity(new Intent(CreateRecipeActivity.this, InsideFolderActivity.class)
-                        .putExtra("folderName", "MyRecipes"));
+                startActivity(new Intent(CreateRecipeActivity.this, MainActivity.class));
             }
 
 

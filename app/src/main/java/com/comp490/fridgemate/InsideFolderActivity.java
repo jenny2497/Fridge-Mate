@@ -81,7 +81,7 @@ public class InsideFolderActivity extends AppCompatActivity {
             }
         });
         String folderName = getIntent().getStringExtra("folderName");
-        if (folderName.equals("My Recipes")) {
+        if (folderName.equals("My Recipes") || folderName.equals("MyRecipes")) {
             folderName = "MyRecipes";
             inMyRecipes = true;
         } else {
@@ -162,30 +162,6 @@ public class InsideFolderActivity extends AppCompatActivity {
 
 
     }
-
-//
-//    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
-//        @Override
-//        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//            tags.clear();
-//            tags.add(adapterView.getSelectedItem().toString());
-//        manager.getRandomRecipes(randomRecipeResponseListener, tags);
-//        dialog.show();
-//        }
-//
-//        @Override
-//        public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//        }
-//    };
-//
-//    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
-//        @Override
-//        public void onRecipeClicked(String id) {
-//            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
-//                    .putExtra("id", id));
-//        }
-//    };
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override

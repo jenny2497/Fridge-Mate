@@ -71,7 +71,11 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         holder.textView_title.setSelected(true);
         holder.textView_servings.setText(list.get(position).servings+ " Servings");
         holder.textView_time.setText(list.get(position).readyInMinutes + " Minutes");
-        holder.recipeFromSpoonacular = !list.get(position).fromMyRecipes;
+        if (list.get(position).fromMyRecipes) {
+            holder.recipeFromSpoonacular = false;
+        } else {
+            holder.recipeFromSpoonacular = true;
+        }
         Log.d(list.get(position).title, String.valueOf(holder.recipeFromSpoonacular));
 
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
