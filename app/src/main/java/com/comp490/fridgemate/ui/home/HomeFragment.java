@@ -78,14 +78,11 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-//        final TextView textView = binding.textHome;
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
       dialog = new ProgressDialog((getActivity()));
         dialog.setTitle("Loading...");
@@ -160,9 +157,13 @@ public class HomeFragment extends Fragment {
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
-        public void onRecipeClicked(String id) {
-            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
-                    .putExtra("id", id));
+        public void onRecipeClicked(String id, boolean fromSpoonacular, String folderName) {
+            Intent intent = new Intent(getActivity(), RecipeDetailsActivity.class);
+            Bundle extras = new Bundle();
+            extras.putString("id", id);
+            extras.putBoolean("fromSpoonacular", true);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     };
 }

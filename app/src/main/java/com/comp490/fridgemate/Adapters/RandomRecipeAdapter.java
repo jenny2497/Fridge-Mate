@@ -1,12 +1,14 @@
 package com.comp490.fridgemate.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,8 @@ import com.comp490.fridgemate.Listeners.RecipeClickListener;
 import com.comp490.fridgemate.Models.Recipe;
 import com.comp490.fridgemate.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -42,15 +46,17 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     String user;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     boolean inFavoritesFolder;
+    boolean inMyRecipes;
 
 
 
 
-    public RandomRecipeAdapter(Context context, List<Recipe> list, RecipeClickListener listener, boolean inFavoritesFolder) {
+    public RandomRecipeAdapter(Context context, List<Recipe> list, RecipeClickListener listener, boolean inFavoritesFolder, boolean inMyRecipes) {
         this.context = context;
         this.list = list;
         this.listener = listener;
         this.inFavoritesFolder = inFavoritesFolder;
+        this.inMyRecipes = inMyRecipes;
     }
 
     @NonNull
@@ -65,10 +71,16 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         holder.textView_title.setSelected(true);
         holder.textView_servings.setText(list.get(position).servings+ " Servings");
         holder.textView_time.setText(list.get(position).readyInMinutes + " Minutes");
+        if (list.get(position).fromMyRecipes) {
+            holder.recipeFromSpoonacular = false;
+        } else {
+            holder.recipeFromSpoonacular = true;
+        }
+        Log.d(list.get(position).title, String.valueOf(holder.recipeFromSpoonacular));
 
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         user = currentFirebaseUser.getUid();
-        holder.recipeDocRef = db.collection("users/" + user + "/categories/folders/Favorites").document(list.get(position).title);
+        holder.recipeDocRef = db.collection("users/" + user + "/categories/folders/Favorites").document(String.valueOf(list.get(position).id));
         holder.recipeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -107,15 +119,44 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
                 holder.recipeIsFavorited = !holder.recipeIsFavorited;
             }
         });
-
-        Picasso.get().load(list.get(position).image).into(holder.imageView_food);
+        Log.d("recipe is from spoon", String.valueOf(holder.recipeFromSpoonacular));
+        if (holder.recipeFromSpoonacular) {
+            Picasso.get().load(list.get(position).image).into(holder.imageView_food);
+        } else {
+            StorageReference imgRef = storage.getReference();
+            StorageReference imgRefWithPath = imgRef.child("users/" + user + "/categories/folders/MyRecipes/" + list.get(position).id);
+            Log.d("let's see if we", String.valueOf(list.get(position).id));
+            imgRefWithPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Picasso.get().load(uri).into(holder.imageView_food);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    e.printStackTrace();
+                    Log.d("for some reason", "won't display");
+                }
+            });
+            //load picture from cloud storage
+        }
 
         holder.random_list_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
+            String folderName;
+            if (inFavoritesFolder) {
+                folderName = "Favorites";
+            } else if (inMyRecipes) {
+                folderName = "MyRecipes";
+            } else {
+                folderName = "";
+            }
+            listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id), holder.recipeFromSpoonacular, folderName);
             }
         });
+
+
     }
 
     @Override
@@ -128,26 +169,36 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         recipeData.put("recipeName", list.get(position).title);
         ArrayList ingredients = new ArrayList();
         ArrayList parsedIngredients = new ArrayList();
+        ArrayList instructions = new ArrayList();
+        ArrayList ingredientsImages = new ArrayList();
         if (list.get(position) != null) {
             for (int i=0; i < list.get(position).extendedIngredients.size(); i++) {
                 String amount = String.valueOf(list.get(position).extendedIngredients.get(i).amount);
+                if (amount == "0.0") {
+                    amount = "";
+                }
                 String units = list.get(position).extendedIngredients.get(i).unit;
+                if (units == null) {
+                    units = "";
+                }
                 String ingredientName = list.get(position).extendedIngredients.get(i).name;
                 ingredients.add(amount + " " + units + " " + ingredientName);
                 parsedIngredients.add(ingredientName);
+                ingredientsImages.add(list.get(position).extendedIngredients.get(i).image);
             }
-            ArrayList instructions = new ArrayList();
             for (int i=0; i< list.get(position).analyzedInstructions.get(0).steps.size(); i++) {
                 instructions.add(list.get(position).analyzedInstructions.get(0).steps.get(i).step);
             }
+
             recipeData.put("ingredients", ingredients);
             recipeData.put("parsedIngredients", parsedIngredients);
+            recipeData.put("ingredientsImages", ingredientsImages);
             recipeData.put("instructions", instructions);
             recipeData.put("readyInMinutes", list.get(position).readyInMinutes);
             recipeData.put("preparationMinutes", list.get(position).preparationMinutes);
             recipeData.put("cookingMinutes", list.get(position).cookingMinutes);
             recipeData.put("image", list.get(position).image);
-            recipeData.put("fromSpoonacular", true);
+            recipeData.put("fromMyRecipes", new Boolean(!holder.recipeFromSpoonacular));
             recipeData.put("servings", list.get(position).servings);
             recipeData.put("id", list.get(position).id);
             holder.recipeDocRef.set(recipeData);
@@ -162,6 +213,7 @@ class RandomRecipeViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView_food, imageView_favorited;
     DocumentReference recipeDocRef;
     boolean recipeIsFavorited;
+    boolean recipeFromSpoonacular;
 
 
     public RandomRecipeViewHolder(@NonNull View itemView) {

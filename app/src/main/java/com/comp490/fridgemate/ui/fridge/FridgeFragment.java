@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,6 +56,7 @@ public class FridgeFragment extends Fragment {
     DocumentReference fridgeDocRef;
     String user;
     ArrayList<String> fridgeItems = new ArrayList<>();
+    ArrayList<String> fridgeImages = new ArrayList<>();
     ListView fridgeIngredients;
     ArrayAdapter<String> fridgeIngredientsAdapter;
 
@@ -77,16 +80,20 @@ public class FridgeFragment extends Fragment {
 
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String image = response.get(position).image;
                     String selection = (String)parent.getItemAtPosition(position);
                     fridgeItems.add(selection);
+                    fridgeImages.add(image);
                     fridgeIngredientsAdapter.notifyDataSetChanged();
                     if (needToCreateFridge) {
                         Map<String, Object> fridgeData = new HashMap<>();
                         fridgeData.put("fridge", Arrays.asList(selection));
+                        fridgeData.put("fridgeImages", Arrays.asList(image));
                         fridgeDocRef.set(fridgeData);
                         needToCreateFridge = false;
                     } else {
                         fridgeDocRef.update("fridge", FieldValue.arrayUnion(selection));
+                        fridgeDocRef.update("fridgeImages", FieldValue.arrayUnion(image));
                     }
                     Log.d("test", selection);
                     addFridgeItem.setText("");
@@ -157,18 +164,24 @@ public class FridgeFragment extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         fridgeItems = (ArrayList<String>) document.getData().get("fridge");
+                        fridgeImages = (ArrayList<String>) document.getData().get("fridgeImages");
                         Log.d("TAG", "DocumentSnapshot data: " + fridgeItems);
                         fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems) {
                             @Override
                             public View getView(final int position, View convertView, ViewGroup parent) {
                                 View inflatedView = super.getView(position, convertView, parent);
                                 Button deleteIngredientButton = inflatedView.findViewById(R.id.delete_ingredient);
+                                ImageView ingredientImage = inflatedView.findViewById(R.id.imageView_ingredient_fridge_image);
+                                Picasso.get().load("https://spoonacular.com/cdn/ingredients_100x100/"+ fridgeImages.get(position)).into(ingredientImage);
+
                                 deleteIngredientButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         Log.d("TAG", "item clicked " + fridgeItems.get(position));
                                         fridgeDocRef.update("fridge", FieldValue.arrayRemove(fridgeItems.get(position)));
+                                        fridgeDocRef.update("fridgeImages", FieldValue.arrayRemove(fridgeImages.get(position)));
                                         fridgeItems.remove(position);
+                                        fridgeImages.remove(position);
                                         fridgeIngredientsAdapter.notifyDataSetChanged();
 
                                     }

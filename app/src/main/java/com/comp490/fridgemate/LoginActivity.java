@@ -71,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
             // Successfully signed in
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
