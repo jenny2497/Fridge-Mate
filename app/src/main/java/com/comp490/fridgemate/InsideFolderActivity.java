@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,9 +32,11 @@ import com.comp490.fridgemate.Models.Step;
 import com.comp490.fridgemate.databinding.FragmentSearchBinding;
 import com.comp490.fridgemate.ui.search.SearchViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -51,24 +54,77 @@ public class InsideFolderActivity extends AppCompatActivity {
     FirebaseUser currentFirebaseUser;
     String user;
     boolean inMyRecipes;
+    List<Recipe> recipesInFolder = new ArrayList<>();
+    CollectionReference collectionRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_search);
+        Spinner spinner_tags = findViewById(R.id.spinner_tags);
+        spinner_tags.setVisibility(View.INVISIBLE);
 
 
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
+        String folderName = getIntent().getStringExtra("folderName");
+        if (folderName.equals("My Recipes") || folderName.equals("MyRecipes")) {
+            folderName = "MyRecipes";
+            inMyRecipes = true;
+        } else {
+            inMyRecipes = false;
+        }
       dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
         dialog.show();
+
+
+        Log.d("foldername", folderName);
+
+        // [START get_multiple_all]
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        user = currentFirebaseUser.getUid();
+        collectionRef = db.collection("users/" + user + "/categories/folders/" + folderName);
+        loadAllRecipes();
+            // [END get_multiple_all]
+
+//        manager.getRandomRecipes(randomRecipeResponseListener,tags);
+//        dialog.show();
         searchView = findViewById(R.id.searchView_home);
+        ImageView clearButton = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+        clearButton.setOnClickListener(v -> {
+            if(searchView.getQuery().length() == 0) {
+                searchView.setIconified(true);
+            } else {
+
+                // Do your task here
+                searchView.setQuery("", false);
+                loadAllRecipes();
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                dialog.show();
+                Log.d("query", query);
+
+                collectionRef.whereGreaterThanOrEqualTo("recipeName", query)
+                        .whereLessThanOrEqualTo("recipeName", query + "\uf8ff")
+                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        recipesInFolder.clear();
+                        if (task.isSuccessful()) {
+                            dialog.dismiss();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                addItemToList(document);
+
+                            }
+                            recipeAdapter.notifyDataSetChanged();
+                            }
+                    }
+                });
                 //look for recipe in favorites
 //                tags.clear();
 //                tags.add(query);
@@ -78,98 +134,90 @@ public class InsideFolderActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
                 return false;
             }
+
+
         });
-        String folderName = getIntent().getStringExtra("folderName");
-        if (folderName.equals("My Recipes") || folderName.equals("MyRecipes")) {
-            folderName = "MyRecipes";
-            inMyRecipes = true;
-        } else {
-            inMyRecipes = false;
-        }
-        Log.d("foldername", folderName);
-
-        // [START get_multiple_all]
-        List<Recipe> recipesInFolder = new ArrayList<>();
-        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        user = currentFirebaseUser.getUid();
-        db.collection("users/" + user + "/categories/folders/" + folderName)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                dialog.dismiss();
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Recipe newRecipe = new Recipe();
-                                    Log.d("doc", document.getId() + " => " + document.getData());
-                                    try {
-                                        newRecipe.readyInMinutes = (int) (long) document.getData().get("readyInMinutes");
-                                        newRecipe.servings = (int) (long) document.getData().get("servings");
-                                        newRecipe.title = (String) document.getData().get("recipeName");
-                                        newRecipe.id = (int) (long) document.getData().get("id");
-                                        newRecipe.extendedIngredients = new ArrayList<ExtendedIngredient>();
-                                        List<String> ingredientOriginals = (List<String>) document.getData().get("ingredients");
-                                        List<String> parsedIngredients = (List<String>) document.getData().get("parsedIngredients");
-                                        for (int i=0; i < ingredientOriginals.size(); i++) {
-                                            ExtendedIngredient toAdd = new ExtendedIngredient();
-                                            toAdd.name = parsedIngredients.get(i);
-                                            toAdd.original = ingredientOriginals.get(i);
-                                            newRecipe.extendedIngredients.add(toAdd);
-                                        }
-
-                                        List<String> steps = (List<String>) document.getData().get("instructions");
-                                        AnalyzedInstruction analyzedInstruction = new AnalyzedInstruction();
-                                        ArrayList<Step> stepsInsideInstruction = new ArrayList<>();
-
-                                        for (int i = 0; i < steps.size(); i++) {
-                                            Step toAdd = new Step();
-                                            toAdd.step = steps.get(i);
-                                            toAdd.number = i + 1;
-                                            stepsInsideInstruction.add(toAdd);
-                                        }
-                                        analyzedInstruction.steps = stepsInsideInstruction;
-                                        ArrayList<AnalyzedInstruction> analyzedInstructions = new ArrayList<>();
-                                        analyzedInstructions.add(analyzedInstruction);
-                                        newRecipe.analyzedInstructions = analyzedInstructions;
-
-                                        newRecipe.preparationMinutes  = (int) (long) document.getData().get("preparationMinutes");
-                                        newRecipe.cookingMinutes = (int) (long) document.getData().get("cookingMinutes");
-                                        newRecipe.fromMyRecipes = (boolean) document.getData().get("fromMyRecipes");
-
-                                    } catch (Exception e){
-
-                                    }
-
-                                    newRecipe.image = (String) document.getData().get("image");
-                                    recipesInFolder.add(newRecipe);
-
-                                    //todo: error handling - what if data upload got interrupted?  need to check if any is null
-                                }
-                                recyclerView = findViewById(R.id.recycler_random);
-                                recyclerView.setHasFixedSize(true);
-                                recyclerView.setLayoutManager(new GridLayoutManager(InsideFolderActivity.this, 1));
-                                if (inMyRecipes) {
-                                    inMyRecipes = true;
-                                } else {
-                                    inMyRecipes = false;
-                                }
-                                recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, !inMyRecipes, inMyRecipes);
-                                recyclerView.setAdapter(recipeAdapter);
-                            } else {
-                                Log.d("doc", "Error getting documents: ", task.getException());
-                            }
-                        }
-                    });
-            // [END get_multiple_all]
-
-//        manager.getRandomRecipes(randomRecipeResponseListener,tags);
-//        dialog.show();
-
 
     }
 
+    private void loadAllRecipes() {
+        recipesInFolder.clear();
+        collectionRef
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            dialog.dismiss();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                addItemToList(document);
+                                //todo: error handling - what if data upload got interrupted?  need to check if any is null
+                            }
+                            recyclerView = findViewById(R.id.recycler_random);
+                            recyclerView.setHasFixedSize(true);
+                            recyclerView.setLayoutManager(new GridLayoutManager(InsideFolderActivity.this, 1));
+                            if (inMyRecipes) {
+                                inMyRecipes = true;
+                            } else {
+                                inMyRecipes = false;
+                            }
+                            recipeAdapter = new RandomRecipeAdapter(InsideFolderActivity.this, recipesInFolder, recipeClickListener, !inMyRecipes, inMyRecipes);
+                            recyclerView.setAdapter(recipeAdapter);
+                        } else {
+                            Log.d("doc", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
+
+    private void addItemToList(QueryDocumentSnapshot document) {
+        Recipe newRecipe = new Recipe();
+        Log.d("doc", document.getId() + " => " + document.getData());
+        try {
+            newRecipe.readyInMinutes = (int) (long) document.getData().get("readyInMinutes");
+            newRecipe.servings = (int) (long) document.getData().get("servings");
+            newRecipe.title = (String) document.getData().get("recipeName");
+            newRecipe.id = (int) (long) document.getData().get("id");
+            newRecipe.extendedIngredients = new ArrayList<ExtendedIngredient>();
+            List<String> ingredientOriginals = (List<String>) document.getData().get("ingredients");
+            List<String> parsedIngredients = (List<String>) document.getData().get("parsedIngredients");
+            for (int i=0; i < ingredientOriginals.size(); i++) {
+                ExtendedIngredient toAdd = new ExtendedIngredient();
+                toAdd.name = parsedIngredients.get(i);
+                toAdd.original = ingredientOriginals.get(i);
+                newRecipe.extendedIngredients.add(toAdd);
+            }
+
+            List<String> steps = (List<String>) document.getData().get("instructions");
+            AnalyzedInstruction analyzedInstruction = new AnalyzedInstruction();
+            ArrayList<Step> stepsInsideInstruction = new ArrayList<>();
+
+            for (int i = 0; i < steps.size(); i++) {
+                Step toAdd = new Step();
+                toAdd.step = steps.get(i);
+                toAdd.number = i + 1;
+                stepsInsideInstruction.add(toAdd);
+            }
+            analyzedInstruction.steps = stepsInsideInstruction;
+            ArrayList<AnalyzedInstruction> analyzedInstructions = new ArrayList<>();
+            analyzedInstructions.add(analyzedInstruction);
+            newRecipe.analyzedInstructions = analyzedInstructions;
+
+            newRecipe.preparationMinutes  = (int) (long) document.getData().get("preparationMinutes");
+            newRecipe.cookingMinutes = (int) (long) document.getData().get("cookingMinutes");
+            newRecipe.fromMyRecipes = (boolean) document.getData().get("fromMyRecipes");
+
+        } catch (Exception e){
+
+        }
+
+        newRecipe.image = (String) document.getData().get("image");
+        recipesInFolder.add(newRecipe);
+    }
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id, boolean fromSpoonacular, String folderName) {
