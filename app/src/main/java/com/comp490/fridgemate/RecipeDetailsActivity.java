@@ -53,7 +53,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
     TextView textView_meal_name, textView_meal_source, textView_meal_servings, similar_recipe_label;
     ImageView imageView_meal_image, imageView_favorited_main;
-    Button edit_button;
+    Button edit_button, delete_button;
     RecyclerView recycler_meal_ingredients, recycler_meal_similar, recycler_meal_instructions;
     RequestManager manager;
     ProgressDialog dialog;
@@ -68,6 +68,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     Map<String, Object> recipeData = new HashMap<>();
     boolean fromSpoonacular;
     FirebaseStorage storage = FirebaseStorage.getInstance();
+    DocumentReference recipeDocRef;
+    String folderName;
 
 
 
@@ -91,11 +93,13 @@ public class RecipeDetailsActivity extends AppCompatActivity {
             manager.getSimilarRecipes(similarRecipesListener, id);
             manager.getInstructions(instructionsListener, id);
             edit_button.setVisibility(View.INVISIBLE);
+            delete_button.setVisibility(View.INVISIBLE);
         } else {
             Log.d("are we here", "no");
             similar_recipe_label.setVisibility(View.INVISIBLE);
-            String folderName = extras.getString("folderName");
+            folderName = extras.getString("folderName");
             recycler_meal_similar.setVisibility(View.INVISIBLE);
+
             edit_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,7 +109,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            DocumentReference recipeDocRef = db.collection("users/" + user + "/categories/folders/" + folderName).document(String.valueOf(id));
+            recipeDocRef = db.collection("users/" + user + "/categories/folders/" + folderName).document(String.valueOf(id));
             Log.d("file path", "users/" + user + "/categories/folders/" + folderName + "/" + id);
             recipeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -221,6 +225,23 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                 recipeIsFavorited = !recipeIsFavorited;
             }
         });
+
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (recipeIsFavorited) {
+                    favoritedDocRef.delete();
+                }
+                if (folderName=="Favorites") { //then we have to get a recipeDocRef to the copy stored in MyRecipes
+                    recipeDocRef = db.collection("users/" + user + "/categories/folders/MyRecipes").document(String.valueOf(id));
+                }
+                recipeDocRef.delete();
+                Intent intent = new Intent(RecipeDetailsActivity.this,
+                        MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     public void addRecipeToDatabase() {
@@ -240,6 +261,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         imageView_favorited_main = findViewById(R.id.imageView_favorited_main);
         similar_recipe_label = findViewById(R.id.similar_recipe_label);
         edit_button = findViewById(R.id.edit_button);
+        delete_button = findViewById(R.id.delete_button);
     }
 
     private void createRecipeDataForFavorites(RecipeDetailsResponse response, boolean fromMyRecipes) {
