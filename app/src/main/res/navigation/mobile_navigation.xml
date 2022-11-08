@@ -30,6 +30,7 @@
         android:name="com.comp490.fridgemate.ui.search.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search" />
+
     <fragment
         android:id="@+id/navigation_bookmark"
         android:name="com.comp490.fridgemate.ui.bookMark.BookMarkFragment"

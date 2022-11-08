@@ -5,6 +5,7 @@
     <string name="title_bookmarks">Bookmarks</string>
     <string name="api_key">f630b9f762ba48a4916f2dd300db53da</string>
     <string name="search">Search</string>
+    <string name="groceries">Groceries</string>
     <string name="title_fridge">Fridge</string>
     <string-array name="tags">
         <item>main course</item>

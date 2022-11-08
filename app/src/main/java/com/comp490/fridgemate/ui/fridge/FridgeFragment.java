@@ -63,6 +63,20 @@ public class FridgeFragment extends Fragment {
     List<String> apiFoods = new ArrayList<>();
     boolean needToCreateFridge;
 
+
+    ArrayAdapter<String> autoFillAdapterGroceries;
+    AutoCompleteTextView addGroceryItem;
+
+    DocumentReference groceryDocRef;
+    ArrayList<String> groceryItems = new ArrayList<>();
+    ArrayList<String> groceryImages = new ArrayList<>();
+    ListView groceryIngredients;
+    ArrayAdapter<String> groceryIngredientsAdapter;
+
+    List<String> apiGroceries = new ArrayList<>();
+    boolean needToCreateGroceries;
+
+
     private final AutocompleteIngredientsListener autocompleteIngredientsListener = new AutocompleteIngredientsListener() {
         @Override
         public void didFetch(List<AutocompleteIngredientsResponse> response, String message) {
@@ -97,6 +111,49 @@ public class FridgeFragment extends Fragment {
                     }
                     Log.d("test", selection);
                     addFridgeItem.setText("");
+                }
+            });
+        }
+
+        @Override
+        public void didError(String message) {
+            Toast.makeText(root.getContext(), message, Toast.LENGTH_SHORT);
+        }
+    };
+    private final AutocompleteIngredientsListener autocompleteIngredientsListenerGroceries = new AutocompleteIngredientsListener() {
+        @Override
+        public void didFetch(List<AutocompleteIngredientsResponse> response, String message) {
+            apiGroceries.clear();
+            for (int i=0; i < response.size(); i++) {
+                apiGroceries.add(response.get(i).name);
+            }
+            autoFillAdapterGroceries = new ArrayAdapter<String>(root.getContext(), android.R.layout.simple_dropdown_item_1line, apiGroceries);
+            addGroceryItem.setAdapter(autoFillAdapterGroceries);
+
+            addGroceryItem.showDropDown();
+
+
+            addGroceryItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String image = response.get(position).image;
+                    String selection = (String)parent.getItemAtPosition(position);
+                    groceryItems.add(selection);
+                    groceryImages.add(image);
+                    groceryIngredientsAdapter.notifyDataSetChanged();
+                    if (needToCreateGroceries) {
+                        Map<String, Object> groceryData = new HashMap<>();
+                        groceryData.put("grocery", Arrays.asList(selection));
+                        groceryData.put("groceryImages", Arrays.asList(image));
+                        groceryDocRef.set(groceryData);
+                        needToCreateGroceries = false;
+                    } else {
+                        groceryDocRef.update("grocery", FieldValue.arrayUnion(selection));
+                        groceryDocRef.update("groceryImages", FieldValue.arrayUnion(image));
+                    }
+                    Log.d("test", selection);
+                    addGroceryItem.setText("");
                 }
             });
         }
@@ -147,19 +204,50 @@ public class FridgeFragment extends Fragment {
         user = currentFirebaseUser.getUid();
         fridgeDocRef = db.collection("users/" + user + "/categories").document("fridge");
 
-        fetchFromDatabase();
+        fetchFromDatabaseFridge();
+
+        addGroceryItem = root.findViewById(R.id.add_grocery_item);
+
+        autoFillAdapterGroceries = new ArrayAdapter<String>(root.getContext(), android.R.layout.simple_list_item_1, apiGroceries);
+        addGroceryItem.setAdapter(autoFillAdapterGroceries);
+        addGroceryItem.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //retrieve data s
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String text = s.toString();
+                manager.getAutoCompleteIngredients(autocompleteIngredientsListenerGroceries, text);
+                Log.d("TAG", "foodsApi is " + apiGroceries);
+            }
+        });
+
+        groceryIngredients = root.findViewById(R.id.listView_grocery_list);
+        //get data from firebase and add to fridgeItems
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        user = currentFirebaseUser.getUid();
+        groceryDocRef = db.collection("users/" + user + "/categories").document("grocery");
+
+        fetchFromDatabaseGrocery();
+
 
 
 
         return root;
     }
 
-    private void fetchFromDatabase() {
+    private void fetchFromDatabaseFridge() {
 
         fridgeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                dialog.dismiss();
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
@@ -203,6 +291,61 @@ public class FridgeFragment extends Fragment {
                     fridgeIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, fridgeItems);
                     fridgeIngredients.setAdapter(fridgeIngredientsAdapter);
                     needToCreateFridge = true;
+                }
+            }
+        });
+
+
+    }
+    private void fetchFromDatabaseGrocery() {
+
+        groceryDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                dialog.dismiss();
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        groceryItems = (ArrayList<String>) document.getData().get("grocery");
+                        groceryImages = (ArrayList<String>) document.getData().get("groceryImages");
+                        Log.d("TAG", "DocumentSnapshot data: " + groceryItems);
+                        groceryIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, groceryItems) {
+                            @Override
+                            public View getView(final int position, View convertView, ViewGroup parent) {
+                                View inflatedView = super.getView(position, convertView, parent);
+                                Button deleteIngredientButton = inflatedView.findViewById(R.id.delete_ingredient);
+                                ImageView ingredientImage = inflatedView.findViewById(R.id.imageView_ingredient_fridge_image);
+                                Picasso.get().load("https://spoonacular.com/cdn/ingredients_100x100/"+ groceryImages.get(position)).into(ingredientImage);
+
+                                deleteIngredientButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Log.d("TAG", "item clicked " + groceryItems.get(position));
+                                        groceryDocRef.update("grocery", FieldValue.arrayRemove(groceryItems.get(position)));
+                                        groceryDocRef.update("groceryImages", FieldValue.arrayRemove(groceryImages.get(position)));
+                                        groceryItems.remove(position);
+                                        groceryImages.remove(position);
+                                        groceryIngredientsAdapter.notifyDataSetChanged();
+
+                                    }
+                                });
+                                return inflatedView;
+                            };
+                        };
+
+                        groceryIngredients.setAdapter(groceryIngredientsAdapter);
+                        needToCreateGroceries = false;
+                    } else {
+                        Log.d("TAG", "No such document");
+                        groceryIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, groceryItems);
+                        groceryIngredients.setAdapter(groceryIngredientsAdapter);
+                        needToCreateGroceries = true;
+                    }
+                } else {
+                    Log.d("TAG", "get failed with ", task.getException());
+                    groceryIngredientsAdapter = new ArrayAdapter<String>(root.getContext(), R.layout.fridge_ingredient_item, R.id.fridge_ingredient, groceryItems);
+                    groceryIngredients.setAdapter(groceryIngredientsAdapter);
+                    needToCreateGroceries = true;
                 }
             }
         });
