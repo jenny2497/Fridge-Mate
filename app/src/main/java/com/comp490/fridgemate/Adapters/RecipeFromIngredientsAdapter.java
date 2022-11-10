@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -17,6 +19,11 @@ import com.comp490.fridgemate.Listeners.RecipeClickListener;
 import com.comp490.fridgemate.Models.Recipe;
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
 import com.comp490.fridgemate.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -26,6 +33,11 @@ public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFro
     Context context;
     List<RecipeFromIngredientsResponse> list;
     RecipeClickListener listener;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+    String user = currentFirebaseUser.getUid();
+    DocumentReference groceryDocRef = db.collection("users/" + user + "/categories").document("grocery");
+
 
     public RecipeFromIngredientsAdapter(Context context, List<RecipeFromIngredientsResponse> list, RecipeClickListener listener) {
         this.context = context;
@@ -55,13 +67,41 @@ public class RecipeFromIngredientsAdapter extends RecyclerView.Adapter<RecipeFro
             }
         });
         List<String> missingIngredientsNames = new ArrayList<>();
+        List<String> missingIngredientImages = new ArrayList<>();
         for (int i=0; i<list.get(position).missedIngredients.size(); i++) {
             missingIngredientsNames.add(list.get(position).missedIngredients.get(i).name);
+            missingIngredientImages.add(list.get(position).missedIngredients.get(i).image.substring(48));
         }
         if (missingIngredientsNames.size() == 0) {
             missingIngredientsNames.add("No missing ingredients!");
         }
-        holder.listView_missing_ingredients.setAdapter(new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, missingIngredientsNames));
+        ArrayAdapter<String> ingredientsAdapter = new ArrayAdapter<String>(context, R.layout.missing_ingredient_item, R.id.missing_ingredient, missingIngredientsNames) {
+            @Override
+            public View getView(final int position, View convertView, ViewGroup parent) {
+                View inflatedView = super.getView(position, convertView, parent);
+                Button addToGroceries = inflatedView.findViewById(R.id.add_to_groceries);
+                if (missingIngredientsNames.get(position).equals("No missing ingredients!")) {
+                    addToGroceries.setVisibility(View.INVISIBLE);
+                } else {
+                    ImageView ingredientImage = inflatedView.findViewById(R.id.imageView_ingredient_grocery_image);
+                    Picasso.get().load("https://spoonacular.com/cdn/ingredients_100x100/"+ missingIngredientImages.get(position)).into(ingredientImage);
+
+                    addToGroceries.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            groceryDocRef.update("grocery", FieldValue.arrayUnion(missingIngredientsNames.get(position)));
+                            groceryDocRef.update("groceryImages", FieldValue.arrayUnion(missingIngredientImages.get(position)));
+                            Toast.makeText(getContext(), "Added Ingredient to Grocery List", Toast.LENGTH_LONG).show();
+
+                        }
+                    });
+                }
+
+                return inflatedView;
+            }
+        };
+
+        holder.listView_missing_ingredients.setAdapter(ingredientsAdapter);
     }
 
     @Override
