@@ -16,6 +16,7 @@ import com.comp490.fridgemate.Models.ParseIngredientsResponse;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeDetailsResponse;
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
+import com.comp490.fridgemate.Models.RecipeFromIngredientsRoot;
 import com.comp490.fridgemate.Models.SimilarRecipeResponse;
 
 import java.util.List;
@@ -177,7 +178,7 @@ public class RequestManager {
         });
     }
 
-    public void getRecipeFromIngredients(RecipeFromIngredientsListener listener, List<String> query) {
+    public void getRecipeFromIngredients(RecipeFromIngredientsListener listener, List<String> query, String type) {
         CallRecipeFromIngredients callRecipeFromIngredients = retrofit.create(CallRecipeFromIngredients.class);
         String ingredientsList = "";
         for (int i = 0; i <query.size(); i++) {
@@ -186,23 +187,26 @@ public class RequestManager {
                 ingredientsList += ",";
             }
         }
-        Call<List<RecipeFromIngredientsResponse>> call = callRecipeFromIngredients.callRecipeFromIngredients(context.getString(R.string.api_key), ingredientsList,"2","true");
-        call.enqueue(new Callback<List<RecipeFromIngredientsResponse>>() {
+        Call<RecipeFromIngredientsRoot> call = callRecipeFromIngredients.callRecipeFromIngredients(context.getString(R.string.api_key), "true",ingredientsList,"min-missing-ingredients", type);
+        call.enqueue(new Callback<RecipeFromIngredientsRoot>() {
             @Override
-            public void onResponse(Call<List<RecipeFromIngredientsResponse>> call, Response<List<RecipeFromIngredientsResponse>> response) {
+            public void onResponse(Call<RecipeFromIngredientsRoot> call, Response<RecipeFromIngredientsRoot> response) {
                 if (!response.isSuccessful()) {
                     listener.didError(response.message());
+                    Log.d("errormessage", response.errorBody().toString());
                     return;
                 }
                 listener.didFetch(response.body(), response.message());
             }
 
             @Override
-            public void onFailure(Call<List<RecipeFromIngredientsResponse>> call, Throwable t) {
+            public void onFailure(Call<RecipeFromIngredientsRoot> call, Throwable t) {
                 listener.didError(t.getMessage());
-
+                Log.d("throwable", t.getMessage());
             }
         });
+
+
     }
     private interface CallRandomRecipes {
         @GET("recipes/random")
@@ -247,14 +251,13 @@ public class RequestManager {
     }
 
     private interface CallRecipeFromIngredients {
-        @GET("recipes/findByIngredients")
-        retrofit2.Call<List<RecipeFromIngredientsResponse>> callRecipeFromIngredients(
+        @GET("recipes/complexSearch")
+        retrofit2.Call<RecipeFromIngredientsRoot> callRecipeFromIngredients(
                 @Query("apiKey") String apiKey,
-                @Query("ingredients") String ingredients,
-                @Query("ranking") String ranking,
-                @Query("ignorePantry") String ignorePantry
-
-
+                @Query("fillIngredients") String infoWanted,
+                @Query("includeIngredients") String ingredients,
+                @Query("sort") String sortPattern,
+                @Query("type") String typeOfMeal
                 );
     }
 
