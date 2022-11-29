@@ -27,6 +27,7 @@ import com.comp490.fridgemate.Listeners.RecipeFromIngredientsListener;
 import com.comp490.fridgemate.MainActivity;
 import com.comp490.fridgemate.Models.RandomRecipeApiResponse;
 import com.comp490.fridgemate.Models.RecipeFromIngredientsResponse;
+import com.comp490.fridgemate.Models.RecipeFromIngredientsRoot;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RecipeDetailsActivity;
 import com.comp490.fridgemate.RequestManager;
@@ -54,17 +55,18 @@ public class HomeFragment extends Fragment {
     FirebaseUser currentFirebaseUser;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference fridgeDocRef;
+    String type = "main course";
 
 
     private final RecipeFromIngredientsListener recipeFromIngredientsListener = new RecipeFromIngredientsListener() {
         @Override
-        public void didFetch(List<RecipeFromIngredientsResponse> response, String message) {
+        public void didFetch(RecipeFromIngredientsRoot response, String message) {
             dialog.dismiss();
 
             recyclerView = getActivity().findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            recipeFromIngredientsAdapter = new RecipeFromIngredientsAdapter(getActivity(), response, recipeClickListener);
+            recipeFromIngredientsAdapter = new RecipeFromIngredientsAdapter(getActivity(), response.results, recipeClickListener);
             recyclerView.setAdapter(recipeFromIngredientsAdapter);
         }
 
@@ -87,16 +89,15 @@ public class HomeFragment extends Fragment {
       dialog = new ProgressDialog((getActivity()));
         dialog.setTitle("Loading...");
         dialog.show();
-        spinner = root.findViewById(R.id.spinner_tags);
-        spinner.setVisibility(View.INVISIBLE);
-//        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
-//                root.getContext(),
-//                R.array.tags,
-//                R.layout.spinner_text
-//        );
-//        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
-//        spinner.setAdapter(arrayAdapter);
-//        spinner.setOnItemSelectedListener(spinnerSelectedListener);
+        spinner = root.findViewById(R.id.spinner_tags_home);
+        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
+                root.getContext(),
+                R.array.tags,
+                R.layout.spinner_text
+        );
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(spinnerSelectedListener);
         manager = new RequestManager(root.getContext());
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         String user = currentFirebaseUser.getUid();
@@ -116,7 +117,7 @@ public class HomeFragment extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         ingredientsInFridge = (ArrayList<String>) document.getData().get("fridge");
-                        manager.getRecipeFromIngredients(recipeFromIngredientsListener, ingredientsInFridge);
+                        manager.getRecipeFromIngredients(recipeFromIngredientsListener, ingredientsInFridge, type);
 
                         Log.d("TAG", "DocumentSnapshot data: " + ingredientsInFridge);
                     } else {
@@ -140,20 +141,18 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-//    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
-//        @Override
-//        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//            tags.clear();
-//            tags.add(adapterView.getSelectedItem().toString());
-//        manager.getRecipeFromIngredients(recipeFromIngredientsListener, tags);
-//        dialog.show();
-//        }
-//
-//        @Override
-//        public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//        }
-//    };
+    private final AdapterView.OnItemSelectedListener spinnerSelectedListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            type = adapterView.getSelectedItem().toString();
+            manager.getRecipeFromIngredients(recipeFromIngredientsListener, ingredientsInFridge, type);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
+        }
+    };
 
     private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
         @Override
