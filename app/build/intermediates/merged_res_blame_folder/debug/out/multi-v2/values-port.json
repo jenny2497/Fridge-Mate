@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.comp490.fridgemate.app-mergeDebugResources-50:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/Users/hugozavaleta/.gradle/caches/transforms-3/3f5c2477152d7584834f0e810860d5b2/transformed/appcompat-1.5.0/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

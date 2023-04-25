@@ -1,0 +1,270 @@
+[
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-pngs-47:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fragment_fridge.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_fridge.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_text_recognition.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/text_recognition.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_activity_login.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_create_recipe.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/create_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/xml_backup_rules.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable-v24_fridgemate_logo.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable-v24/fridgemate_logo.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_image_search_48.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_image_search_48.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_no_food_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_no_food_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fragment_bookmark.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_bookmark.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/navigation_mobile_navigation.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_price.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_price.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_servings.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_servings.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fragment_home.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_baseline_document_scanner_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/baseline_document_scanner_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_local_grocery_store_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_local_grocery_store_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_random_recipe.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_random_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/menu_bottom_nav_menu.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_meal_ingredients.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_meal_ingredients.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_outline_favorite_border_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_outline_favorite_border_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_bookmark_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_bookmark_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_activity_recipe_details.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_recipe_details.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_folder_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_folder_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_missing_ingredient_item.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/missing_ingredient_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fragment_search.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_recipe_from_ingredients.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_recipe_from_ingredients.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_activity_main.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_spinner_inner_text.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/spinner_inner_text.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_spinner_text.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/spinner_text.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fragment_settings.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_search_24_white.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_search_24_white.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_folder_item.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/folder_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_create_item.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/create_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_baseline_insert_photo_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/baseline_insert_photo_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_baseline_add_a_photo_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/baseline_add_a_photo_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_favorite_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_favorite_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_instructions_steps.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_instructions_steps.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_settings_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_settings_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_like.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_like.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_fridge.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_fridge.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_baseline_search_24.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable-v24_logo.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable-v24/logo.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.comp490.fridgemate.app-merged_res-52:/layout_text_recognition.xml.flat",
+        "source": "com.comp490.fridgemate.app-main-54:/layout/text_recognition.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable-v24_transparent_fridgemate_logo.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable-v24/transparent_fridgemate_logo.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_similar_recipe.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_similar_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/drawable_ic_time.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/drawable/ic_time.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_fridge_ingredient_item.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fridge_ingredient_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-merged_res-52:/layout_list_instructions.xml.flat",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_instructions.xml"
+    }
+]

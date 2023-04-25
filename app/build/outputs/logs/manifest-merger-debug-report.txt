@@ -1,0 +1,892 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1294b61b8a3d6cefcf05409c7986fb1c/transformed/viewbinding-7.3.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.navigation:navigation-ui:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3509ef6a4e296e4629aa5e7033a0b3f0/transformed/navigation-ui-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:2:1-109:12
+MERGED from [com.google.android.material:material:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/e139a978130116d938c95fcd91cf9145/transformed/material-1.6.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/hugozavaleta/.gradle/caches/transforms-3/316c6db6a7a1469e0742b0fa2ebd663e/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/f1d4a1fbfca92d0c49b4308187d3cb49/transformed/appcompat-resources-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/deb3c7a4c695fa5b905e6dbd2b60e2bf/transformed/library-1.6.1/AndroidManifest.xml:6:1-15:12
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3f5c2477152d7584834f0e810860d5b2/transformed/appcompat-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cfbf772e9c59921b5643440d725ee055/transformed/lifecycle-livedata-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/fb6a2051c5610710af6fba1a99d8de7d/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6be34f4afa5e4117a346e368b50ebc4d/transformed/fragment-ktx-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4b0f4efa41681e6e891568ac44b3dc9a/transformed/navigation-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3f4a5ea3f3f3921300c04156f97c24d0/transformed/activity-ktx-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/aaa5561e0975c4aba19bad1764d93a20/transformed/navigation-common-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d1830d356f42ea39b53a2f27765f4694/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:17:1-73:12
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:15:1-39:12
+MERGED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/59044f023da49ee529fb4165c6a1158c/transformed/play-services-mlkit-text-recognition-18.0.2/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0cabd102e9413f2568f6a680e7e061bf/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1e62562559ddd82f40dbd7a8d9ba0ad3/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/1844b962508ec47b61e12aad57f86658/transformed/firebase-appcheck-interop-16.0.1/AndroidManifest.xml:15:1-26:12
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:15:1-40:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/648ee35ec8de9ba84128459e2202fdac/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:17:1-40:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/68bd68dd8b9a4cd82350c80537f61841/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3aae41edccd9fcad0e171c62d170bea7/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/dd6af1867976ecf2ee0ea48e139183f5/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/33761e563836c4d5d5e0d38d7440d683/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/39e488dd32a64a4b5816833869faef2b/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5680ae062492784270dd519c8d59ab2d/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/002b4542753de1182456175003cfd2c2/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d9d8cd690a5ccb2a413fdb92cae4b9b4/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/02d6a713bff95dec3917d74f6a46fb89/transformed/play-services-auth-base-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b4a21f2dfac2be756b6bd3e0944a9780/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/850440cca3bae73024779bff6c47cab2/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/10401312bde162ba9388355cca4c6728/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/50f111a7ccf4f79e79fe4f958d11639d/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/16ae9c7ca4f372457bde59c6b4bc1e0f/transformed/activity-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cafe3cd59078d7da85008d90dcb8e8fe/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/5eba3befbace2dd1122d09908a06107e/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0da9dc6ee18d6aa98e3d94da94974996/transformed/core-ktx-1.8.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/e4d4e6fe7c4e5a4740d6b213d37894d8/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/f7c5c7c749a71ae349aad493a0b86aa6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/55506613feadb9f93be42ce6470a4325/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/bc1804196af09a804e603b61ecd4aa96/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/9d342031b9c8ba054bde9bc41117d4d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0b4ebb103c781cfa7d4f4340e0789be0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/eb96b47fade2023daab42b598e01e2cd/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c7203f831ce2b6e346aa699732e6cc7/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/6ba9c8ebf99eba533d76132ba130eb93/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c91e88b65a474ac96553227b9676164/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4f283838a79bd8742b5644e0ad2d9753/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.media:media:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ed6426318a465ad6ad8d9382a229fa7a/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a93ba162ca881a453ded80247be73313/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b748f14bd5b63287e0a0d7f2aa2b4e21/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5065c3640ec02c443b465481f0077188/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/7280b44783eba0a6adbee9100f457dba/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3e3357471287cea3d9b5f9716239e818/transformed/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/03f0adce79efc8dbd034b49798404711/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/227796f04d74ea6ebb10f360c426d530/transformed/firebase-components-17.0.1/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3ad5d0bf1220b01d0ed78e835e84fae4/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5f6aab600bd1e969160d3940988bf5db/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/9f23c4013feb1ac2dcf217c4f7569397/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/90943350a3009222981befeced34e61a/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d4a6586499b8305adba68ce4ca141fa2/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cf531037932e73b9c4c9d18f8da60adc/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2b25cffbf1b263de36da98df557a4ef3/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/8c965585019df384d260af6da876da31/transformed/lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c438c310a00497f8a0e6780b6bc119f6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/04321554b9e96526071c1688e0025c84/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d47e586b30828f32056d4a0d281dd00/transformed/transport-api-2.2.1/AndroidManifest.xml:15:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c9f685fe54548acebb322efec49cd200/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/35e876ece5d7f6069c9dda6a69dc1e92/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebfa3090b35810ccffb92e93502cc65f/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/029d423c8236a8f095c0f434bd38ae85/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/be92e45b0771aaaf77fcc53798a73af2/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/hugozavaleta/.gradle/caches/transforms-3/41b3f138fc2ed3db0d2ab089ddef56ac/transformed/grpc-android-1.44.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebd01f14b3251a5ef3f464d59d370130/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d96dd194286e0369d351a966f2d4f3e/transformed/image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+	package
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:4:5-37
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:1-54:12
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.camera
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:6:5-8:36
+	android:required
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:8:9-33
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:7:9-47
+uses-permission#android.permission.INTERNET
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:10:5-67
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:13:5-67
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:13:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:27:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:10:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:11:22-77
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:12:5-78
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:12:5-79
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:12:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/hugozavaleta/.gradle/caches/transforms-3/41b3f138fc2ed3db0d2ab089ddef56ac/transformed/grpc-android-1.44.1/AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/hugozavaleta/.gradle/caches/transforms-3/41b3f138fc2ed3db0d2ab089ddef56ac/transformed/grpc-android-1.44.1/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:12:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:13:5-64
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:13:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:14:22-78
+application
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:17:5-52:19
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:15:5-107:19
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:15:5-107:19
+MERGED from [com.google.android.material:material:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/e139a978130116d938c95fcd91cf9145/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/e139a978130116d938c95fcd91cf9145/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/hugozavaleta/.gradle/caches/transforms-3/316c6db6a7a1469e0742b0fa2ebd663e/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/hugozavaleta/.gradle/caches/transforms-3/316c6db6a7a1469e0742b0fa2ebd663e/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:29:5-37:19
+MERGED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:7:5-12:19
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1e62562559ddd82f40dbd7a8d9ba0ad3/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1e62562559ddd82f40dbd7a8d9ba0ad3/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/1844b962508ec47b61e12aad57f86658/transformed/firebase-appcheck-interop-16.0.1/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/1844b962508ec47b61e12aad57f86658/transformed/firebase-appcheck-interop-16.0.1/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:25:5-38:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/648ee35ec8de9ba84128459e2202fdac/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/648ee35ec8de9ba84128459e2202fdac/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/002b4542753de1182456175003cfd2c2/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/002b4542753de1182456175003cfd2c2/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/850440cca3bae73024779bff6c47cab2/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/850440cca3bae73024779bff6c47cab2/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/9f23c4013feb1ac2dcf217c4f7569397/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/9f23c4013feb1ac2dcf217c4f7569397/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d96dd194286e0369d351a966f2d4f3e/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d96dd194286e0369d351a966f2d4f3e/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:22:9-41
+	android:fullBackupContent
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:20:9-54
+	android:roundIcon
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:23:9-54
+	tools:targetApi
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:26:9-29
+	android:icon
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:21:9-43
+	android:allowBackup
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:25:9-48
+	android:dataExtractionRules
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:19:9-65
+activity#com.comp490.fridgemate.TextRecognitionAction
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:28:9-29:39
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:28:19-56
+activity#com.comp490.fridgemate.CreateRecipeActivity
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:30:9-32:40
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:31:13-49
+activity#com.comp490.fridgemate.RecipeDetailsActivity
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:34:13-50
+activity#com.comp490.fridgemate.MainActivity
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:37:13-41
+activity#com.comp490.fridgemate.InsideFolderActivity
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:39:9-41:40
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:40:13-49
+activity#com.comp490.fridgemate.LoginActivity
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:42:9-51:20
+	android:label
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:45:13-45
+	android:exported
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:44:13-36
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:43:13-42
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:46:13-50:29
+action#android.intent.action.MAIN
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:47:17-69
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:47:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:49:17-77
+	android:name
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml:49:27-74
+uses-sdk
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1294b61b8a3d6cefcf05409c7986fb1c/transformed/viewbinding-7.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:viewbinding:7.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1294b61b8a3d6cefcf05409c7986fb1c/transformed/viewbinding-7.3.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-ui:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3509ef6a4e296e4629aa5e7033a0b3f0/transformed/navigation-ui-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3509ef6a4e296e4629aa5e7033a0b3f0/transformed/navigation-ui-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:8:5-10:41
+MERGED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android.material:material:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/e139a978130116d938c95fcd91cf9145/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/e139a978130116d938c95fcd91cf9145/transformed/material-1.6.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/hugozavaleta/.gradle/caches/transforms-3/316c6db6a7a1469e0742b0fa2ebd663e/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/hugozavaleta/.gradle/caches/transforms-3/316c6db6a7a1469e0742b0fa2ebd663e/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/f1d4a1fbfca92d0c49b4308187d3cb49/transformed/appcompat-resources-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/f1d4a1fbfca92d0c49b4308187d3cb49/transformed/appcompat-resources-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/deb3c7a4c695fa5b905e6dbd2b60e2bf/transformed/library-1.6.1/AndroidManifest.xml:11:5-13:41
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /Users/hugozavaleta/.gradle/caches/transforms-3/deb3c7a4c695fa5b905e6dbd2b60e2bf/transformed/library-1.6.1/AndroidManifest.xml:11:5-13:41
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3f5c2477152d7584834f0e810860d5b2/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3f5c2477152d7584834f0e810860d5b2/transformed/appcompat-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cfbf772e9c59921b5643440d725ee055/transformed/lifecycle-livedata-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cfbf772e9c59921b5643440d725ee055/transformed/lifecycle-livedata-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/fb6a2051c5610710af6fba1a99d8de7d/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/fb6a2051c5610710af6fba1a99d8de7d/transformed/navigation-fragment-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6be34f4afa5e4117a346e368b50ebc4d/transformed/fragment-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6be34f4afa5e4117a346e368b50ebc4d/transformed/fragment-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4b0f4efa41681e6e891568ac44b3dc9a/transformed/navigation-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4b0f4efa41681e6e891568ac44b3dc9a/transformed/navigation-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3f4a5ea3f3f3921300c04156f97c24d0/transformed/activity-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/3f4a5ea3f3f3921300c04156f97c24d0/transformed/activity-ktx-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/aaa5561e0975c4aba19bad1764d93a20/transformed/navigation-common-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/aaa5561e0975c4aba19bad1764d93a20/transformed/navigation-common-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d1830d356f42ea39b53a2f27765f4694/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d1830d356f42ea39b53a2f27765f4694/transformed/lifecycle-viewmodel-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/59044f023da49ee529fb4165c6a1158c/transformed/play-services-mlkit-text-recognition-18.0.2/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/59044f023da49ee529fb4165c6a1158c/transformed/play-services-mlkit-text-recognition-18.0.2/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0cabd102e9413f2568f6a680e7e061bf/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0cabd102e9413f2568f6a680e7e061bf/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1e62562559ddd82f40dbd7a8d9ba0ad3/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/1e62562559ddd82f40dbd7a8d9ba0ad3/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/1844b962508ec47b61e12aad57f86658/transformed/firebase-appcheck-interop-16.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/1844b962508ec47b61e12aad57f86658/transformed/firebase-appcheck-interop-16.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/648ee35ec8de9ba84128459e2202fdac/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/648ee35ec8de9ba84128459e2202fdac/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/68bd68dd8b9a4cd82350c80537f61841/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/68bd68dd8b9a4cd82350c80537f61841/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3aae41edccd9fcad0e171c62d170bea7/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3aae41edccd9fcad0e171c62d170bea7/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/dd6af1867976ecf2ee0ea48e139183f5/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/dd6af1867976ecf2ee0ea48e139183f5/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/33761e563836c4d5d5e0d38d7440d683/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/33761e563836c4d5d5e0d38d7440d683/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/39e488dd32a64a4b5816833869faef2b/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/39e488dd32a64a4b5816833869faef2b/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5680ae062492784270dd519c8d59ab2d/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5680ae062492784270dd519c8d59ab2d/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/002b4542753de1182456175003cfd2c2/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/002b4542753de1182456175003cfd2c2/transformed/play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d9d8cd690a5ccb2a413fdb92cae4b9b4/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d9d8cd690a5ccb2a413fdb92cae4b9b4/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/02d6a713bff95dec3917d74f6a46fb89/transformed/play-services-auth-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/02d6a713bff95dec3917d74f6a46fb89/transformed/play-services-auth-base-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b4a21f2dfac2be756b6bd3e0944a9780/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b4a21f2dfac2be756b6bd3e0944a9780/transformed/vision-interfaces-16.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/850440cca3bae73024779bff6c47cab2/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/850440cca3bae73024779bff6c47cab2/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/10401312bde162ba9388355cca4c6728/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/10401312bde162ba9388355cca4c6728/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/50f111a7ccf4f79e79fe4f958d11639d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/50f111a7ccf4f79e79fe4f958d11639d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/16ae9c7ca4f372457bde59c6b4bc1e0f/transformed/activity-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/16ae9c7ca4f372457bde59c6b4bc1e0f/transformed/activity-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cafe3cd59078d7da85008d90dcb8e8fe/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cafe3cd59078d7da85008d90dcb8e8fe/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/5eba3befbace2dd1122d09908a06107e/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/5eba3befbace2dd1122d09908a06107e/transformed/lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0da9dc6ee18d6aa98e3d94da94974996/transformed/core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0da9dc6ee18d6aa98e3d94da94974996/transformed/core-ktx-1.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/e4d4e6fe7c4e5a4740d6b213d37894d8/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/e4d4e6fe7c4e5a4740d6b213d37894d8/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/f7c5c7c749a71ae349aad493a0b86aa6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/f7c5c7c749a71ae349aad493a0b86aa6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/55506613feadb9f93be42ce6470a4325/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/55506613feadb9f93be42ce6470a4325/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/bc1804196af09a804e603b61ecd4aa96/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/bc1804196af09a804e603b61ecd4aa96/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/9d342031b9c8ba054bde9bc41117d4d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/9d342031b9c8ba054bde9bc41117d4d1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0b4ebb103c781cfa7d4f4340e0789be0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/0b4ebb103c781cfa7d4f4340e0789be0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/eb96b47fade2023daab42b598e01e2cd/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/eb96b47fade2023daab42b598e01e2cd/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c7203f831ce2b6e346aa699732e6cc7/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c7203f831ce2b6e346aa699732e6cc7/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/6ba9c8ebf99eba533d76132ba130eb93/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/6ba9c8ebf99eba533d76132ba130eb93/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c91e88b65a474ac96553227b9676164/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5c91e88b65a474ac96553227b9676164/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4f283838a79bd8742b5644e0ad2d9753/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/4f283838a79bd8742b5644e0ad2d9753/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ed6426318a465ad6ad8d9382a229fa7a/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ed6426318a465ad6ad8d9382a229fa7a/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a93ba162ca881a453ded80247be73313/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a93ba162ca881a453ded80247be73313/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b748f14bd5b63287e0a0d7f2aa2b4e21/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/b748f14bd5b63287e0a0d7f2aa2b4e21/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ca63bafdf51d6bae4aafbd35d5708bfd/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5065c3640ec02c443b465481f0077188/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5065c3640ec02c443b465481f0077188/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/7280b44783eba0a6adbee9100f457dba/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/7280b44783eba0a6adbee9100f457dba/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3e3357471287cea3d9b5f9716239e818/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3e3357471287cea3d9b5f9716239e818/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/03f0adce79efc8dbd034b49798404711/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/03f0adce79efc8dbd034b49798404711/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/227796f04d74ea6ebb10f360c426d530/transformed/firebase-components-17.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:17.0.1] /Users/hugozavaleta/.gradle/caches/transforms-3/227796f04d74ea6ebb10f360c426d530/transformed/firebase-components-17.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3ad5d0bf1220b01d0ed78e835e84fae4/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/3ad5d0bf1220b01d0ed78e835e84fae4/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5f6aab600bd1e969160d3940988bf5db/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/5f6aab600bd1e969160d3940988bf5db/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/9f23c4013feb1ac2dcf217c4f7569397/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/9f23c4013feb1ac2dcf217c4f7569397/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/90943350a3009222981befeced34e61a/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/90943350a3009222981befeced34e61a/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d4a6586499b8305adba68ce4ca141fa2/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/d4a6586499b8305adba68ce4ca141fa2/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cf531037932e73b9c4c9d18f8da60adc/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/cf531037932e73b9c4c9d18f8da60adc/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2b25cffbf1b263de36da98df557a4ef3/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2b25cffbf1b263de36da98df557a4ef3/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/8c965585019df384d260af6da876da31/transformed/lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/8c965585019df384d260af6da876da31/transformed/lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c438c310a00497f8a0e6780b6bc119f6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c438c310a00497f8a0e6780b6bc119f6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/04321554b9e96526071c1688e0025c84/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/04321554b9e96526071c1688e0025c84/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d47e586b30828f32056d4a0d281dd00/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d47e586b30828f32056d4a0d281dd00/transformed/transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c9f685fe54548acebb322efec49cd200/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c9f685fe54548acebb322efec49cd200/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/35e876ece5d7f6069c9dda6a69dc1e92/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/35e876ece5d7f6069c9dda6a69dc1e92/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebfa3090b35810ccffb92e93502cc65f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebfa3090b35810ccffb92e93502cc65f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/029d423c8236a8f095c0f434bd38ae85/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/029d423c8236a8f095c0f434bd38ae85/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/be92e45b0771aaaf77fcc53798a73af2/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/be92e45b0771aaaf77fcc53798a73af2/transformed/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/hugozavaleta/.gradle/caches/transforms-3/41b3f138fc2ed3db0d2ab089ddef56ac/transformed/grpc-android-1.44.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.44.1] /Users/hugozavaleta/.gradle/caches/transforms-3/41b3f138fc2ed3db0d2ab089ddef56ac/transformed/grpc-android-1.44.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebd01f14b3251a5ef3f464d59d370130/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ebd01f14b3251a5ef3f464d59d370130/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d96dd194286e0369d351a966f2d4f3e/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/hugozavaleta/.gradle/caches/transforms-3/6d96dd194286e0369d351a966f2d4f3e/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		ADDED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/hugozavaleta/Documents/GitHub/Fridge-Mate/app/src/main/AndroidManifest.xml
+meta-data#com.google.android.gms.version
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:16:9-18:69
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/ad3c6233f3b6d1513ce2009c99e072aa/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:18:13-66
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:17:13-58
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:19:9-21:63
+	android:value
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:21:13-60
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:20:13-58
+activity#com.firebase.ui.auth.KickoffActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:23:9-27:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:26:13-29
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:27:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:24:13-64
+activity#com.firebase.ui.auth.ui.idp.SingleSignInActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:28:9-32:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:31:13-29
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:30:13-37
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:32:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:29:13-76
+activity#com.firebase.ui.auth.ui.credentials.CredentialSaveActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:33:9-37:61
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:36:13-29
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:35:13-37
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:37:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:34:13-86
+activity#com.firebase.ui.auth.ui.email.RecoverPasswordActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:38:9-42:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:41:13-72
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:42:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:39:13-81
+activity#com.firebase.ui.auth.ui.email.EmailActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:43:9-47:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:46:13-56
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:47:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:44:13-71
+activity#com.firebase.ui.auth.ui.phone.PhoneActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:48:9-52:77
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:51:13-66
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:52:13-74
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:50:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:49:13-71
+activity#com.firebase.ui.auth.ui.idp.WelcomeBackIdpPrompt
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:53:9-57:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:56:13-70
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:57:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:55:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:54:13-76
+activity#com.firebase.ui.auth.ui.email.WelcomeBackPasswordPrompt
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:58:9-62:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:61:13-75
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:62:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:60:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:59:13-83
+activity#com.firebase.ui.auth.ui.email.WelcomeBackEmailLinkPrompt
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:63:9-67:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:66:13-75
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:67:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:65:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:64:13-84
+activity#com.firebase.ui.auth.ui.email.EmailLinkCatcherActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:68:9-73:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:71:13-29
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:73:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:70:13-37
+	android:theme
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:72:13-58
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:69:13-82
+activity#com.firebase.ui.auth.ui.email.EmailLinkErrorRecoveryActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:74:9-78:58
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:77:13-56
+	android:windowSoftInputMode
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:78:13-55
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:76:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:75:13-88
+activity#com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:79:9-82:65
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:82:13-62
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:81:13-37
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:80:13-80
+activity#com.facebook.FacebookActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:83:9-87:48
+	android:label
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:86:13-45
+	tools:ignore
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:87:13-45
+	android:configChanges
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:85:13-96
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:84:13-57
+activity#com.facebook.CustomTabActivity
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:88:9-100:20
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:90:13-36
+	tools:ignore
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:91:13-45
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:89:13-58
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/facebook_login_protocol_scheme
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:92:13-99:29
+action#android.intent.action.VIEW
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:93:17-69
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:93:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:95:17-76
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:95:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:96:17-78
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:96:27-75
+data
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:98:17-81
+	android:scheme
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:98:23-78
+provider#com.firebase.ui.auth.data.client.AuthUiInitProvider
+ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:102:9-106:38
+	android:authorities
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:104:13-70
+	android:exported
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:105:13-37
+	android:initOrder
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:106:13-35
+	android:name
+		ADDED from [com.firebaseui:firebase-ui-auth:7.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/4760cd905302add97d1747d885e7d24d/transformed/firebase-ui-auth-7.2.0/AndroidManifest.xml:103:13-79
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:27:9-44:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:29:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:31:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:32:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:28:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:33:13-43:29
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:45:9-62:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:47:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:48:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:50:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:46:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:51:13-61:29
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:64:9-70:19
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:33:9-37:35
+MERGED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:33:9-37:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:66:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:65:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:67:13-69:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:69:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.8] /Users/hugozavaleta/.gradle/caches/transforms-3/535dc9902afe7f327d8e7e5c82a2e608/transformed/firebase-auth-21.0.8/AndroidManifest.xml:68:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.3.0] /Users/hugozavaleta/.gradle/caches/transforms-3/a5d70a6089b6139f10560cdd88846e32/transformed/firebase-firestore-24.3.0/AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:20.0.2] /Users/hugozavaleta/.gradle/caches/transforms-3/5165b815d6b0fad1d1f19ad2b47cb26d/transformed/firebase-storage-20.0.2/AndroidManifest.xml:34:17-107
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.8] /Users/hugozavaleta/.gradle/caches/transforms-3/956a0419b000bfddb1ce42355bfe0337/transformed/picasso-2.8/AndroidManifest.xml:9:13-64
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:11:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:10:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-text-recognition-common:18.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/c94854d7df0642ec034167c519e68db5/transformed/play-services-mlkit-text-recognition-common-18.0.0/AndroidManifest.xml:13:17-114
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.2.1] /Users/hugozavaleta/.gradle/caches/transforms-3/df04a9f9f834d22a06a5a549f9ab0e47/transformed/vision-common-17.2.1/AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.5.0] /Users/hugozavaleta/.gradle/caches/transforms-3/90b50178ff4b4d8847441a02cdace274/transformed/common-18.5.0/AndroidManifest.xml:21:17-120
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/hugozavaleta/.gradle/caches/transforms-3/6fc49e9afe2cd10b8529473812b6b391/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.1.2] /Users/hugozavaleta/.gradle/caches/transforms-3/cdd3f7ffa1398772453767d6a50db9c4/transformed/firebase-common-20.1.2/AndroidManifest.xml:27:13-77
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/2f6bfff87213ff8d360e94f9acea0621/transformed/play-services-auth-19.0.0/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/hugozavaleta/.gradle/caches/transforms-3/46d29faa3da165aa30f19303aa7e1bf2/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/hugozavaleta/.gradle/caches/transforms-3/c85a0b6176baf431c0224bbb74875efe/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/hugozavaleta/.gradle/caches/transforms-3/54379e6789c93551ed51b8c46d8fae38/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/hugozavaleta/.gradle/caches/transforms-3/d756f0c67c79a87168aaf4a6d1851cad/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/hugozavaleta/.gradle/caches/transforms-3/2180ea550ae768d5e3369a2e54b36134/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/hugozavaleta/.gradle/caches/transforms-3/ac9d64927dd008d737842a3c37030167/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132

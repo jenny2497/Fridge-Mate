@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fragment_fridge.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_fridge.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fridge_ingredient_item.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fridge_ingredient_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_random_recipe.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_random_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/create_recipe.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/create_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_instructions_steps.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_instructions_steps.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_similar_recipe.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_similar_recipe.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/activity_recipe_details.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_recipe_details.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_instructions.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_instructions.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_recipe_from_ingredients.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_recipe_from_ingredients.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/create_item.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/create_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/activity_login.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/folder_item.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/folder_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/list_meal_ingredients.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/list_meal_ingredients.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/spinner_text.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/spinner_text.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fragment_search.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/missing_ingredient_item.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/missing_ingredient_item.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fragment_settings.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/text_recognition.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/text_recognition.xml"
+    },
+    {
+        "merged": "com.comp490.fridgemate.app-mergeDebugResources-51:/layout/text_recognition.xml",
+        "source": "com.comp490.fridgemate.app-main-54:/layout/text_recognition.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fragment_home.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/fragment_bookmark.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/fragment_bookmark.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-mergeDebugResources-51:/layout/spinner_inner_text.xml",
+        "source": "/Users/hugozavaleta/.gradle/daemon/7.4/com.comp490.fridgemate.app-main-54:/layout/spinner_inner_text.xml"
+    }
+]
