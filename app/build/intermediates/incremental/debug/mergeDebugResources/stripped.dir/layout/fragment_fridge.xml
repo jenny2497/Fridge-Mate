@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.fridge.FridgeFragment" >
+
+    <AutoCompleteTextView
+        android:id="@+id/add_fridge_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Add Food Item..."
+        android:completionThreshold="2"
+        android:hint="Add Food Item..."
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fridge contains: "
+        android:textSize="24sp"/>
+    <ScrollView
+        android:layout_height="240dp"
+         android:layout_width="wrap_content"
+        android:fillViewport="true"
+        android:animateLayoutChanges="true"
+        >
+    <ListView
+        android:id="@+id/listView_fridge_ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        />
+    </ScrollView>
+    <AutoCompleteTextView
+        android:id="@+id/add_grocery_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Add Food Item..."
+        android:completionThreshold="2"
+        android:hint="Add Grocery Item..."
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grocery List: "
+        android:textSize="24sp" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        android:fillViewport="true"
+        android:animateLayoutChanges="true"
+        >
+    <ListView
+        android:id="@+id/listView_grocery_list"
+        android:layout_width="match_parent"
+        android:layout_height="240dp" />
+    </ScrollView>
+</LinearLayout>
