@@ -24,17 +24,17 @@
         android:layout_height="wrap_content"
         android:text="Fridge contains: "
         android:textSize="24sp"/>
+
     <ScrollView
-        android:layout_height="240dp"
-         android:layout_width="wrap_content"
-        android:fillViewport="true"
+        android:layout_width="wrap_content"
+        android:layout_height="174dp"
         android:animateLayoutChanges="true"
-        >
-    <ListView
-        android:id="@+id/listView_fridge_ingredients"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        />
+        android:fillViewport="true">
+
+        <ListView
+            android:id="@+id/listView_fridge_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
     </ScrollView>
     <AutoCompleteTextView
         android:id="@+id/add_grocery_item"
@@ -53,15 +53,21 @@
         android:layout_height="wrap_content"
         android:text="Grocery List: "
         android:textSize="24sp" />
+
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:fillViewport="true"
+        android:layout_height="178dp"
         android:animateLayoutChanges="true"
-        >
-    <ListView
-        android:id="@+id/listView_grocery_list"
-        android:layout_width="match_parent"
-        android:layout_height="240dp" />
+        android:fillViewport="true">
+
+        <ListView
+            android:id="@+id/listView_grocery_list"
+            android:layout_width="match_parent"
+            android:layout_height="240dp" />
     </ScrollView>
+    <Button
+        android:id="@+id/add_item_TR"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="Add item" />
 </LinearLayout>

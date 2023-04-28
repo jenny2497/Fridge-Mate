@@ -1,6 +1,7 @@
 package com.comp490.fridgemate.ui.fridge;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,10 +22,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.comp490.fridgemate.CreateRecipeActivity;
 import com.comp490.fridgemate.Listeners.AutocompleteIngredientsListener;
 import com.comp490.fridgemate.Models.AutocompleteIngredientsResponse;
 import com.comp490.fridgemate.R;
 import com.comp490.fridgemate.RequestManager;
+import com.comp490.fridgemate.Text_Recognition;
 import com.comp490.fridgemate.databinding.FragmentFridgeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -75,6 +78,7 @@ public class FridgeFragment extends Fragment {
 
     List<String> apiGroceries = new ArrayList<>();
     boolean needToCreateGroceries;
+
 
 
     private final AutocompleteIngredientsListener autocompleteIngredientsListener = new AutocompleteIngredientsListener() {
@@ -236,6 +240,15 @@ public class FridgeFragment extends Fragment {
         groceryDocRef = db.collection("users/" + user + "/categories").document("grocery");
 
         fetchFromDatabaseGrocery();
+
+        Button addRecipe = root.findViewById(R.id.add_item_TR);
+        addRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), Text_Recognition.class));
+            }
+        });
+
 
 
 
