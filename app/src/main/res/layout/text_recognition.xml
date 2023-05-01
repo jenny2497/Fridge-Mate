@@ -65,6 +65,12 @@
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 />
+
+            <Button
+                android:id="@+id/add_to_fridge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Fridge" />
         </LinearLayout>
     </ScrollView>
 

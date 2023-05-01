@@ -14,6 +14,38 @@
       },
       "oauth_client": [
         {
+          "client_id": "299560352945-fd9kog1s2fo088v2sm6tghchskks6qqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.comp490.fridgemate",
+            "certificate_hash": "31ebc9fee138e0d4413e64f0c5c2c59186ea7613"
+          }
+        },
+        {
+          "client_id": "299560352945-guo2p5unei6p19umh4rb7qj56cp64k4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.comp490.fridgemate",
+            "certificate_hash": "219da81617f60e297bdc34e05f593cfe50cc1835"
+          }
+        },
+        {
+          "client_id": "299560352945-ipduumkelvlcknts8rtnggsa1a6f9b3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.comp490.fridgemate",
+            "certificate_hash": "7553c0d03d64e53ab16342da4138579c1613a79c"
+          }
+        },
+        {
+          "client_id": "299560352945-j1fn0f2fgngm2f9ttm8ddjiinpmv2sul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.comp490.fridgemate",
+            "certificate_hash": "9a7a826419492f9895a9362a7451fec3f7cb5cec"
+          }
+        },
+        {
           "client_id": "299560352945-tals2rjsdgnuj0tp2jed8g93aa14km33.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -37,6 +69,13 @@
             {
               "client_id": "299560352945-9diknabvmumhcf2lt4aplh3igi8geeq2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "299560352945-u22t9j7lnotffck8p0cfsbs92f6atn4k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.490.fridgemateiOs"
+              }
             }
           ]
         }

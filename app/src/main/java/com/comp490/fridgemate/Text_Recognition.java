@@ -22,20 +22,39 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Text_Recognition extends AppCompatActivity {
     //UI Views
@@ -56,6 +75,21 @@ public class Text_Recognition extends AppCompatActivity {
     private ProgressDialog progressDialog;
     //Text Recognizer
     private TextRecognizer textRecognizer;
+    android.widget.Button add_to_fridge_button;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser currentFirebaseUser;
+    DocumentReference fridgeDocRef;
+    String user;
+    ArrayList<String> fridgeItems = new ArrayList<>();
+    ArrayList<String> fridgeImages = new ArrayList<>();
+    ListView fridgeIngredients;
+    ArrayAdapter<String> fridgeIngredientsAdapter;
+    boolean taskFailed;
+
+    List<String> apiFoods = new ArrayList<>();
+    boolean needToCreateFridge;
+
+
 
 
     @Override
@@ -66,6 +100,38 @@ public class Text_Recognition extends AppCompatActivity {
         //input UI Views
         inputImageBtn = findViewById(R.id.inputImageBtn);//unputImageBtn
         recognizedTextBtn  = findViewById(R.id.recognizedBtn);
+        add_to_fridge_button = findViewById(R.id.add_to_fridge);
+        add_to_fridge_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String textToAdd = String.valueOf(recognizedTextEt.getText());
+                String imageToAdd = textToAdd + ".jpg";
+
+                currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+                user = currentFirebaseUser.getUid();
+                fridgeDocRef = db.collection("users/" + user + "/categories").document("fridge");
+                checkIfFridgeInDatabase();
+                if (needToCreateFridge && !taskFailed) {
+                    Map<String, Object> fridgeData = new HashMap<>();
+                    fridgeData.put("fridge", Arrays.asList(textToAdd));
+                    fridgeData.put("fridgeImages", Arrays.asList(imageToAdd));
+                    fridgeDocRef.set(fridgeData);
+                    needToCreateFridge = false;
+                    Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
+
+                } else if (!taskFailed) { //we don't need to create the fridge in the database
+                    fridgeDocRef.update("fridge", FieldValue.arrayUnion(textToAdd));
+                    fridgeDocRef.update("fridgeImages", FieldValue.arrayUnion(imageToAdd));
+                    Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
+
+                } else {//task failed
+                    Toast.makeText(Text_Recognition.this, "Could not connect to database", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
+
         imageIv = findViewById(R.id.imageIv);
         recognizedTextEt = findViewById(R.id.recognizedTextEt);
         //init arrays of oermission  required for camera
@@ -290,4 +356,30 @@ public class Text_Recognition extends AppCompatActivity {
         }//end of switch
 
     }//end of onRequestPermissionsResult
+    private void checkIfFridgeInDatabase() {
+
+        fridgeDocRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    taskFailed = false;
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        needToCreateFridge = false;
+                    } else {
+                        Log.d("TAG", "No such document");
+                        needToCreateFridge = true;
+                    }
+                } else {
+                    Log.d("TAG", "get failed with ", task.getException());
+                    needToCreateFridge = true;
+                    taskFailed = true;
+                }
+            }
+        });
+
+
+    }
+
+
 }
