@@ -31,6 +31,8 @@ import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.comp490.fridgemate.ui.fridge.FridgeFragment;
+import com.comp490.fridgemate.ui.home.HomeFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -115,20 +117,30 @@ public class Text_Recognition extends AppCompatActivity {
                     Map<String, Object> fridgeData = new HashMap<>();
                     fridgeData.put("fridge", Arrays.asList(textToAdd));
                     fridgeData.put("fridgeImages", Arrays.asList(imageToAdd));
-                    fridgeDocRef.set(fridgeData);
+                    fridgeDocRef.set(fridgeData).addOnCompleteListener(new OnCompleteListener() {
+                        @Override
+                        public void onComplete(@NonNull Task task) {
+                            Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Text_Recognition.this, FridgeFragment.class));
+                        }
+                    });
                     needToCreateFridge = false;
-                    Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
 
                 } else if (!taskFailed) { //we don't need to create the fridge in the database
                     fridgeDocRef.update("fridge", FieldValue.arrayUnion(textToAdd));
-                    fridgeDocRef.update("fridgeImages", FieldValue.arrayUnion(imageToAdd));
-                    Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
+                    fridgeDocRef.update("fridgeImages", FieldValue.arrayUnion(imageToAdd)).addOnCompleteListener(new OnCompleteListener() {
+                        @Override
+                        public void onComplete(@NonNull Task task) {
+                            Toast.makeText(Text_Recognition.this, "Item added to fridge", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Text_Recognition.this, FridgeFragment.class));
+                        }
+                    });
 
                 } else {//task failed
                     Toast.makeText(Text_Recognition.this, "Could not connect to database", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Text_Recognition.this, FridgeFragment.class));
 
                 }
-
             }
         });
 
@@ -382,4 +394,4 @@ public class Text_Recognition extends AppCompatActivity {
     }
 
 
-}
+}//end of  class

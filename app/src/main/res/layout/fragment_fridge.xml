@@ -69,5 +69,5 @@
         android:id="@+id/add_item_TR"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:text="Add item" />
+        android:text="Add item via image" />
 </LinearLayout>
